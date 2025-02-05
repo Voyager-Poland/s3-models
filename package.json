@@ -1,19 +1,25 @@
 {
   "name": "s3-models",
   "version": "1.0.0",
-  "description": "Modele, servisy i interfejsy dla projektu Voyager S3",
-  "main": "index.js",
+  "description": "Models, Interfaces, Enums for S3",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Voyager-Poland/s3-models.git"
+    "build": "tsc",
+    "test": "karma start"
   },
   "author": "Andrzej Świstowski",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Voyager-Poland/s3-models/issues"
+  "dependencies": {
   },
-  "homepage": "https://github.com/Voyager-Poland/s3-models#readme"
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "ts-node": "^9.0.0",
+    "@types/node": "^14.0.0",
+    "karma": "^6.3.4",
+    "karma-jasmine": "^4.0.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "jasmine-core": "^3.8.0",
+    "@types/jasmine": "^3.8.0",
+    "karma-typescript": "^5.5.2"
+  }
 }
