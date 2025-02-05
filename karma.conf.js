@@ -34,12 +34,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
-    reporters: ['progress', 'karma-typescript', 'html'],
-
-    htmlReporter: {
-      outputDir: 'karma_html', // where to put the reports
-      reportName: 'report-summary', // report summary filename; browser info by default
-    },
+    reporters: ['progress', 'karma-typescript'],
 
 
     // web server port
@@ -79,8 +74,7 @@ module.exports = function(config) {
     plugins: [
       'karma-jasmine',
       'karma-chrome-launcher',
-      'karma-typescript',
-      'karma-html-reporter'
+      'karma-typescript'
     ]
   });
 };

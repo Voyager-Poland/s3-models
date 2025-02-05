@@ -5,7 +5,10 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "experimentalDecorators": true, // Add this line
+    "emitDecoratorMetadata": true,  // Add this line if you are using Angular
+    "noImplicitAny": true           // Add this line to catch implicit any types
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
