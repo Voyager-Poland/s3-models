@@ -1,0 +1,19 @@
+{
+  "name": "s3-models",
+  "version": "1.0.0",
+  "description": "Modele, servisy i interfejsy dla projektu Voyager S3",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voyager-Poland/s3-models.git"
+  },
+  "author": "Andrzej Świstowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Voyager-Poland/s3-models/issues"
+  },
+  "homepage": "https://github.com/Voyager-Poland/s3-models#readme"
+}
