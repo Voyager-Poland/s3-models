@@ -17,12 +17,7 @@ relationships:
 labels:
   - source:github
 customFields:
-  - name: SQLLogin
-    type: text
-    value: null
   - name: SVNRepository
     type: text
     value: null
-  - name: Supervisor
-    type: text
-    value: null
+  
