@@ -9,6 +9,9 @@ links:
   - name: null
     type: REPOSITORY
     url: https://github.com/Voyager-Poland/s3-models
+  - name: null
+    type: OTHER_LINK
+    url: https://www.npmjs.com/package/s3-models
 relationships:
   DEPENDS_ON: []
 labels:
