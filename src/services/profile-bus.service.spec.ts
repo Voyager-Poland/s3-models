@@ -20,7 +20,7 @@ describe('ProfileEventBusService', () => {
     });
 
 		service.event$.subscribe((receivedProfile) => {
-			if (!receivedProfile.isNotLogged) {
+			if (receivedProfile.isLogged) {
 				expect(receivedProfile).toEqual(profile);
 			}
     });
@@ -30,7 +30,7 @@ describe('ProfileEventBusService', () => {
 
    it('should initialize with an empty profile', () => {
      service.event$.subscribe((receivedProfile) => {
-       expect(receivedProfile).toEqual(ProfileTokenModel.Empty());
+       expect(receivedProfile).toEqual(ProfileTokenModel.createEmpty());
      });
   });
 });

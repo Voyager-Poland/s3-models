@@ -4,6 +4,6 @@ import { ProfileTokenModel } from "../models/profile.token.model";
 
 export class ProfileEventBusService extends EventBus<ProfileTokenModel> {
   constructor() {
-    super(ProfileTokenModel.Empty());
+    super(ProfileTokenModel.createEmpty());
   }
 }
