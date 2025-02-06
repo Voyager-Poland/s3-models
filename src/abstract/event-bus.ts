@@ -1,4 +1,6 @@
 import { BehaviorSubject, Observable } from 'rxjs';
+import { EventEmitter } from '../interfaces/event-emitter';
+import { EventReader } from '../interfaces/event-reader';
 
 /**
  * Abstract class EventBus<T>
@@ -8,7 +10,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
  * 
  * @template T - The type of events managed by the EventBus.
  */
-export abstract class EventBus<T> {
+export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
   private eventSubject: BehaviorSubject<T>;
   private _event$: Observable<T>;
 
@@ -38,7 +40,7 @@ export abstract class EventBus<T> {
    * 
    * @param event - The event to emit.
    */
-  emitEvent(event: T): void {
+  public emitEvent(event: T): void {
     this.eventSubject.next(event);
   }
 }
