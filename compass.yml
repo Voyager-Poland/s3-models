@@ -2,7 +2,7 @@ name: s3-models
 id: ari:cloud:compass:6f4ff44f-3daf-4331-936e-f105ac8a0cc5:component/dbdd9e20-37cf-4147-9a6c-5bc93cc76ce7/f1ef9b99-01c0-4ed7-9cc3-0aeefb70070e
 description: Biblioteka modeli na potrzeby Angulara
 configVersion: 1
-typeId: SERVICE
+typeId: LIBRARY
 fields:
   tier: 4
 links:
