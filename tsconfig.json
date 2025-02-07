@@ -8,8 +8,9 @@
     "esModuleInterop": true,
     "experimentalDecorators": true, // Add this line
     "emitDecoratorMetadata": true,  // Add this line if you are using Angular
-    "noImplicitAny": true           // Add this line to catch implicit any types
+    "noImplicitAny": true,          // Add this line to catch implicit any types
+    "typeRoots": ["./node_modules/@types"] // Add this line to specify type definitions directory
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]	
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
