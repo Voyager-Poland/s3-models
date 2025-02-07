@@ -6,10 +6,12 @@
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
-    "experimentalDecorators": true, // Add this line
-    "emitDecoratorMetadata": true,  // Add this line if you are using Angular
-    "noImplicitAny": true,          // Add this line to catch implicit any types
-    "typeRoots": ["./node_modules/@types"] // Add this line to specify type definitions directory
+    "experimentalDecorators": true, // Only if using decorators
+    "emitDecoratorMetadata": true,  // Only if using Angular or similar frameworks
+    "noImplicitAny": true,
+    "typeRoots": ["./node_modules/@types"], // Add this line to specify type definitions directory
+    "declaration": true, // Generate type declaration files
+    "declarationDir": "./dist/types" // Output directory for type declaration files
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
