@@ -11,5 +11,5 @@
     "noImplicitAny": true           // Add this line to catch implicit any types
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.spec.ts"]	
 }
