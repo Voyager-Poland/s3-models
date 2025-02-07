@@ -87,9 +87,7 @@ import { ProfileEventBusService, LanguageEventBusService, CurrencyEventBusServic
     { provide: 'LanguageEventEmitter', useExisting: LanguageEventBusService },
     { provide: 'LanguageEventReader', useExisting: LanguageEventBusService },
     { provide: 'CurrencyEventEmitter', useExisting: CurrencyEventBusService },
-    { provide: 'CurrencyEventReader', useExisting: CurrencyEventBusService },
-    { provide: 'StringEventEmitter', useExisting: StringEventBusService },
-    { provide: 'StringEventReader', useExisting: StringEventBusService }
+    { provide: 'CurrencyEventReader', useExisting: CurrencyEventBusService }
   ],
   bootstrap: [AppComponent]
 })
@@ -197,4 +195,4 @@ The `EventBus` class is an abstract class that provides a mechanism for emitting
 
 ## License
 
-This project is licensed under the ISC License.
+This project is licensed under the MTI License.

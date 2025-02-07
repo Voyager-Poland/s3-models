@@ -5,3 +5,4 @@ coverage
 .vscode
 .DS_Store
 *.spec.ts
+karma.conf.js
