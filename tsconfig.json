@@ -1,18 +1,27 @@
 {
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true, // Only if using decorators
-    "emitDecoratorMetadata": true,  // Only if using Angular or similar frameworks
-    "noImplicitAny": true,
-    "typeRoots": ["./node_modules/@types"], // Add this line to specify type definitions directory
-    "declaration": true, // Generate type declaration files
-    "declarationDir": "./dist/types" // Output directory for type declaration files
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+	"compilerOptions": {
+		"target": "ES6",
+		"module": "commonjs", // Specifies the module system (CommonJS).
+		"outDir": "./dist", // Specifies the output directory for compiled files.
+		"rootDir": "./src", // Specifies the root directory of input files.
+		"strict": true, // Enables all strict type-checking options.
+		"esModuleInterop": true, // Enables interoperability between CommonJS and ES modules.
+		"experimentalDecorators": true, // Enables experimental support for decorators.
+		"emitDecoratorMetadata": true, // Emits decorator metadata (useful for Angular).
+		"noImplicitAny": true, // Raises an error on expressions and declarations with an implied 'any' type.
+		"typeRoots": ["./node_modules/@types"], // Specifies the directories to look for type definitions.
+		"declaration": true, // Generate type declaration files.
+		"declarationDir": "./dist/types", // Output directory for type declaration files.
+		"skipLibCheck": true, // Skips type checking of declaration files.
+		"forceConsistentCasingInFileNames": true, // Disallows inconsistently-cased references to the same file.
+		"sourceMap": true, // Generates corresponding '.map' files for debugging.
+		"moduleResolution": "node" // Mimics Node.js module resolution mechanism.
+	},
+	"include": [
+		"src/**/*"
+	], // Includes all TypeScript files in the 'src' directory.
+	"exclude": [
+		"node_modules",
+		"**/*.spec.ts"
+	] // Excludes 'node_modules' and test files.
 }
