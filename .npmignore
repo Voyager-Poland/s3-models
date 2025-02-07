@@ -1,7 +1,8 @@
 node_modules
-src
 karma_html
 coverage
 .git
 .vscode
 .DS_Store
+*.spec.ts
+karma.conf.js

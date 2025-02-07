@@ -1,17 +1,18 @@
 {
 	"name": "s3-models",
-	"version": "1.0.0",
+	"version": "1.0.4",
 	"description": "Models, Interfaces, Enums for Voyager S3",
 	"main": "dist/index.js",
+	"types": "dist/types/index.d.ts",
 	"scripts": {
 		"build": "tsc",
 		"test": "karma start"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Voyager-Poland/s3-models.git"
+		"url": "git+https://github.com/Voyager-Poland/s3-models.git"
 	},
-	"author": "Andrzej Świstowski",
+	"author": "Andrzej Świstowski <andrzej.swistowski@voyager.pl>",
 	"license": "MIT",
 	"devDependencies": {
 		"@types/jasmine": "^3.10.18",
