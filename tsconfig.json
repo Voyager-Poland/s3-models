@@ -9,9 +9,9 @@
 ///		"experimentalDecorators": true,
 //		"emitDecoratorMetadata": true,
 		"noImplicitAny": true,
-		"typeRoots": [
-			"./node_modules/@types"
-		],
+		// "typeRoots": [
+		// 	"./node_modules/@types"
+		// ],
 		"declaration": true,
 		"declarationDir": "./dist/types",
 		//"skipLibCheck": true,

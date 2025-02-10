@@ -1,6 +1,6 @@
 {
 	"name": "s3-models",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Models, Interfaces, Enums for Voyager S3",
 	"main": "dist/index.js",
 	"types": "dist/types/index.d.ts",
