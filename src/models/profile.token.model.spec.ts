@@ -38,4 +38,4 @@ describe('ProfileTokenModel', () => {
     expect(model.profilePictureUri).toBe('');
     expect(model.isLogged).toBe(false);
   });
-});
+ });

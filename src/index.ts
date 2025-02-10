@@ -1,6 +1,6 @@
+import exp from 'constants';
 import { ProfileTokenModel } from './models/profile.token.model';
 import { ProfileEventBusService } from './services/profile-bus.service';
-
 
 // Exporting models
 export { ProfileTokenModel } from './models/profile.token.model';
@@ -15,4 +15,8 @@ export { CurrencyEventBusService } from './services/currency-bus.service';
 
 // Exporting abstract classes
 export { EventBus } from './abstract/event-bus';
+export { EventEmitter } from './interfaces/event-emitter';
+export { EventReader } from './interfaces/event-reader';
+export { ProfilEventEmiter } from './services/profile-bus.service';
+export { ProfilEventReader } from './services/profile-bus.service';
 

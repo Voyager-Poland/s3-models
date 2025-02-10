@@ -6,3 +6,4 @@ coverage
 .DS_Store
 *.spec.ts
 karma.conf.js
+compass.yml
