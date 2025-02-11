@@ -17,6 +17,10 @@ export { CurrencyEventBusService } from './services/currency-bus.service';
 export { EventBus } from './abstract/event-bus';
 export { EventEmitter } from './interfaces/event-emitter';
 export { EventReader } from './interfaces/event-reader';
-export { ProfilEventEmiter } from './services/profile-bus.service';
-export { ProfilEventReader } from './services/profile-bus.service';
+export { ProfilEventEmiter	} from './services/profil-event-emiter';
+export { ProfilEventReader } from './services/profil-event-reader';
+export { CurrencyEventEmitter } from './services/currency-event-emitter';
+export { CurrencyEventReader } from './services/currency-event-reader';
+export { LanguageEventEmitter } from './services/language-event-emitter';
+export { LanguageEventReader } from './services/language-event-reader';
 

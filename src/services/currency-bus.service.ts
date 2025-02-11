@@ -14,3 +14,5 @@ export class CurrencyEventBusService extends EventBus<string> {
     super('PLN'); // Call the constructor of the abstract class with 'PLN' as the initial value
   }
 }
+
+
