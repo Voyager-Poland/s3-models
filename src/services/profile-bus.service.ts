@@ -27,6 +27,11 @@ export class ProfilEventEmiter implements EventEmitter<ProfileTokenModel> {
 	public emitEvent(event: ProfileTokenModel): void {
 		this.service.emitEvent(event);
 	}
+
+	public get getCurrentValue(): ProfileTokenModel {
+		return this.service.getCurrentValue;
+	}
+
 }
 
 export class ProfilEventReader implements EventReader<ProfileTokenModel> {

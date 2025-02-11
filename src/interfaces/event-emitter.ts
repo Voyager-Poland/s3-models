@@ -1,6 +1,7 @@
 
 export interface EventEmitter<T> {
-  emitEvent(event: T): void;
+	emitEvent(event: T): void;
+	get getCurrentValue(): T;
 }
 
 
