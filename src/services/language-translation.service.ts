@@ -1,16 +1,16 @@
-import { BehaviorSubject, map, Observable } from 'rxjs';
-import { Translation } from '../interfaces/translation';
-import { LanguageEventReader } from './language-event-reader';
+import { BehaviorSubject, map, Observable } from "rxjs";
+import { Translation } from "../interfaces/translation";
+import { LanguageEventReader } from "./language-event-reader";
 
 export class LanguageTranslationService {
   private languageSubject: BehaviorSubject<string>;
 
   constructor(
     private languageEventReader: LanguageEventReader,
-     private translation: Translation
+    private translation: Translation
   ) {
-    this.languageSubject = new BehaviorSubject<string>('pl');
-    this.languageEventReader.event$.subscribe(language => {
+    this.languageSubject = new BehaviorSubject<string>("pl");
+    this.languageEventReader.event$.subscribe((language) => {
       this.languageSubject.next(language);
     });
   }
@@ -24,8 +24,6 @@ export class LanguageTranslationService {
   }
 
   getTranslation$(key: string, params?: any): Observable<string> {
-    return this.language$.pipe(
-      map(() => this.translate(key, params))
-    );
+    return this.language$.pipe(map(() => this.translate(key, params)));
   }
 }
