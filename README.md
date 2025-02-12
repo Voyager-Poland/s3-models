@@ -72,28 +72,70 @@ To use the services provided by `s3-models` in your Angular application, you nee
 
 Example:
 
+
+```typescript
+import { InjectionToken } from '@angular/core';
+import { Translation } from 's3-models';
+
+export const TRANSLATION_TOKEN = new InjectionToken<Translation>('Translation');
+
+```
+
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProfileEventBusService, LanguageEventBusService, CurrencyEventBusService, StringEventBusService, ProfilEventEmiter, ProfilEventReader, LanguageEventEmitter, LanguageEventReader, CurrencyEventEmitter, CurrencyEventReader } from 's3-models';
 
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule],
   providers: [
-    ProfileEventBusService,
-    { provide: 'ProfileEventEmitter', useClass: ProfilEventEmiter },
-    { provide: 'ProfileEventReader', useClass: ProfilEventReader },
-    { provide: 'LanguageEventEmitter', useClass: LanguageEventEmitter },
-    { provide: 'LanguageEventReader', useClass: LanguageEventReader },
-    { provide: 'CurrencyEventEmitter', useClass: CurrencyEventEmitter },
-    { provide: 'CurrencyEventReader', useClass: CurrencyEventReader }
+		ProfileEventBusService,
+		{ provide: ProfilEventEmiter, useFactory: (profileService: ProfileEventBusService) => new ProfilEventEmiter(profileService), deps: [ProfileEventBusService] },
+		{ provide: ProfilEventReader, useFactory: (profileService: ProfileEventBusService) => new ProfilEventReader(profileService), deps: [ProfileEventBusService] },
+		CurrencyEventBusService,
+		{ provide: CurrencyEventEmitter, useFactory: (currencyService: CurrencyEventBusService) => new CurrencyEventEmitter(currencyService), deps: [CurrencyEventBusService] },
+		{ provide: CurrencyEventReader, useFactory: (currencyService: CurrencyEventBusService) => new CurrencyEventReader(currencyService), deps: [CurrencyEventBusService] },
+		LanguageEventBusService,
+		{ provide: LanguageEventEmitter, useFactory: (languageService: LanguageEventBusService) => new LanguageEventEmitter(languageService), deps: [LanguageEventBusService] },
+		{ provide: LanguageEventReader, useFactory: (languageService: LanguageEventBusService) => new LanguageEventReader(languageService), deps: [LanguageEventBusService] },
+		{ provide: TRANSLATION_TOKEN, useClass: TranslationService },
+		{ provide: LanguageTranslationService, useFactory: (languageEventReader: LanguageEventReader, translation: TranslationService) => new LanguageTranslationService(languageEventReader, translation), deps: [LanguageEventReader, TranslationService] }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
+
+### LanguageTranslationService
+
+The `LanguageTranslationService` class provides methods for managing language translations and reacting to language changes.
+
+Example usage:
+
+```typescript
+import { Inject } from '@angular/core';
+import { LanguageTranslationService } from 's3-models';
+
+constructor(
+  private languageTranslationService: LanguageTranslationService
+) {
+  this.languageTranslationService.language$.subscribe(language => {
+    console.log('Language changed:', language);
+  });
+
+  const translatedText = this.languageTranslationService.translate('HELLO');
+  console.log(translatedText); // Output: HELLO-translated
+
+  this.languageTranslationService.getTranslation$('HELLO').subscribe(translated => {
+    console.log(translated); // Output: HELLO-translated
+  });
+}
+```
+
 
 ### CurrencyEventBusService
 

@@ -23,4 +23,5 @@ export { CurrencyEventEmitter } from './services/currency-event-emitter';
 export { CurrencyEventReader } from './services/currency-event-reader';
 export { LanguageEventEmitter } from './services/language-event-emitter';
 export { LanguageEventReader } from './services/language-event-reader';
+export { LanguageTranslationService } from './services/language-translation.service';
 
