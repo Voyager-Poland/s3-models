@@ -1,4 +1,3 @@
-import exp from 'constants';
 import { ProfileTokenModel } from './models/profile.token.model';
 import { ProfileEventBusService } from './services/profile-bus.service';
 
