@@ -44,13 +44,13 @@ The `Translation` interface defines methods for translating keys and managing la
 
 ### EventEmitter
 
-The `EventEmitter` interface defines a method for emitting events.
+The `EventEmitter` interface defines methods for emitting events and getting the current value of the event stream.
 
 ```typescript
 export interface EventEmitter<T> {
   emitEvent(event: T): void;
+  get getCurrentValue(): T;
 }
-```
 
 ### EventReader
 
@@ -76,22 +76,45 @@ Example:
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { ProfileEventBusService, LanguageEventBusService, CurrencyEventBusService, StringEventBusService } from 's3-models';
+import { ProfileEventBusService, LanguageEventBusService, CurrencyEventBusService, StringEventBusService, ProfilEventEmiter, ProfilEventReader, LanguageEventEmitter, LanguageEventReader, CurrencyEventEmitter, CurrencyEventReader } from 's3-models';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule],
   providers: [
-    { provide: 'ProfileEventEmitter', useExisting: ProfileEventBusService },
-    { provide: 'ProfileEventReader', useExisting: ProfileEventBusService },
-    { provide: 'LanguageEventEmitter', useExisting: LanguageEventBusService },
-    { provide: 'LanguageEventReader', useExisting: LanguageEventBusService },
-    { provide: 'CurrencyEventEmitter', useExisting: CurrencyEventBusService },
-    { provide: 'CurrencyEventReader', useExisting: CurrencyEventBusService }
+    ProfileEventBusService,
+    { provide: 'ProfileEventEmitter', useClass: ProfilEventEmiter },
+    { provide: 'ProfileEventReader', useClass: ProfilEventReader },
+    { provide: 'LanguageEventEmitter', useClass: LanguageEventEmitter },
+    { provide: 'LanguageEventReader', useClass: LanguageEventReader },
+    { provide: 'CurrencyEventEmitter', useClass: CurrencyEventEmitter },
+    { provide: 'CurrencyEventReader', useClass: CurrencyEventReader }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+```
+
+### CurrencyEventBusService
+
+The `CurrencyEventBusService` class extends the `EventBus` class to handle events of type `string`, with 'PLN' as the default currency.
+
+Example usage:
+
+```typescript
+import { Inject } from '@angular/core';
+import { CurrencyEventBusService, CurrencyEventEmitter, CurrencyEventReader } from 's3-models';
+
+constructor(
+  @Inject('CurrencyEventEmitter') private currencyEventEmitter: CurrencyEventEmitter,
+  @Inject('CurrencyEventReader') private currencyEventReader: CurrencyEventReader
+) {
+  this.currencyEventReader.event$.subscribe(currency => {
+    console.log('Currency changed:', currency);
+  });
+
+  this.currencyEventEmitter.emitEvent('USD');
+}
 ```
 
 ### ProfileEventBusService
@@ -107,6 +130,32 @@ import { ProfileEventBusService, ProfileTokenModel } from 's3-models';
 constructor(
   @Inject('ProfileEventEmitter') private profileEventEmitter: ProfileEventBusService,
   @Inject('ProfileEventReader') private profileEventReader: ProfileEventBusService
+) {
+  this.profileEventReader.event$.subscribe(profile => {
+    console.log('Profile changed:', profile);
+  });
+
+  const newProfile = new ProfileTokenModel({
+    token: 'new-token',
+    initials: 'NT',
+    profilePictureUri: 'http://example.com/new-pic.jpg'
+  });
+  this.profileEventEmitter.emitEvent(newProfile);
+}
+```
+### ProfileEventBusService
+
+The `ProfileEventBusService` class extends the `EventBus` class to handle events of type `ProfileTokenModel`.
+
+Example usage:
+
+```typescript
+import { Inject } from '@angular/core';
+import { ProfileTokenModel, ProfilEventEmiter, ProfilEventReader } from 's3-models';
+
+constructor(
+  @Inject('ProfileEventEmitter') private profileEventEmitter: ProfilEventEmiter,
+  @Inject('ProfileEventReader') private profileEventReader: ProfilEventReader
 ) {
   this.profileEventReader.event$.subscribe(profile => {
     console.log('Profile changed:', profile);
@@ -156,6 +205,27 @@ import { CurrencyEventBusService } from 's3-models';
 constructor(
   @Inject('CurrencyEventEmitter') private currencyEventEmitter: CurrencyEventBusService,
   @Inject('CurrencyEventReader') private currencyEventReader: CurrencyEventBusService
+) {
+  this.currencyEventReader.event$.subscribe(currency => {
+    console.log('Currency changed:', currency);
+  });
+
+  this.currencyEventEmitter.emitEvent('USD');
+}
+```
+### CurrencyEventBusService
+
+The `CurrencyEventBusService` class extends the `EventBus` class to handle events of type `string`, with 'PLN' as the default currency.
+
+Example usage:
+
+```typescript
+import { Inject } from '@angular/core';
+import { CurrencyEventEmitter, CurrencyEventReader } from 's3-models';
+
+constructor(
+  @Inject('CurrencyEventEmitter') private currencyEventEmitter: CurrencyEventEmitter,
+  @Inject('CurrencyEventReader') private currencyEventReader: CurrencyEventReader
 ) {
   this.currencyEventReader.event$.subscribe(currency => {
     console.log('Currency changed:', currency);

@@ -19,18 +19,21 @@ describe('ProfileEventBusService', () => {
       profilePictureUri: 'http://example.com/pic.jpg'
     });
 
-		service.event$.subscribe((receivedProfile) => {
-			if (receivedProfile.isLogged) {
-				expect(receivedProfile).toEqual(profile);
-			}
+    service.event$.subscribe((receivedProfile) => {
+      if (receivedProfile.isLogged) {
+        expect(receivedProfile).toEqual(profile);
+      }
     });
 
-     service.emitEvent(profile);
-   });
+    service.emitEvent(profile);
+    expect(service.getCurrentValue).toEqual(profile); // Check the current value
+  });
 
-   it('should initialize with an empty profile', () => {
-     service.event$.subscribe((receivedProfile) => {
-       expect(receivedProfile).toEqual(ProfileTokenModel.createEmpty());
-     });
+  it('should initialize with an empty profile', () => {
+    service.event$.subscribe((receivedProfile) => {
+      expect(receivedProfile).toEqual(ProfileTokenModel.createEmpty());
+    });
+
+    expect(service.getCurrentValue).toEqual(ProfileTokenModel.createEmpty()); // Check the initial value
   });
 });
