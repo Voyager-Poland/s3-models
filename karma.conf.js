@@ -14,8 +14,8 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
-      { pattern: 'src/**/*.ts' }
+		files: [
+		  { pattern: 'src/**/*.spec.ts' }
     ],
 
 
@@ -68,7 +68,10 @@ module.exports = function(config) {
     concurrency: Infinity,
 
     karmaTypescriptConfig: {
-      tsconfig: './tsconfig.json'
+      tsconfig: './tsconfig.json',
+      compilerOptions: {
+        module: "umd"
+      }
     },
 
     plugins: [
