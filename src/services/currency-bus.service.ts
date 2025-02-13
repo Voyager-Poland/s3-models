@@ -1,5 +1,4 @@
 import { EventBus } from '../abstract/event-bus';
-
 /**
  * Service for managing currency events.
  * 
