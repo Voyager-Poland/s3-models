@@ -1,16 +1,18 @@
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable, Subscription } from 'rxjs';
 import { Translation } from '../interfaces/translation';
 import { LanguageEventReader } from './language-event-reader';
+import { OnDestroy } from '@angular/core';
 
-export class LanguageTranslationService {
+export class LanguageTranslationService implements OnDestroy {
   private languageSubject: BehaviorSubject<string>;
+  private subscription: Subscription;
 
   constructor(
     private languageEventReader: LanguageEventReader,
-     private translation: Translation
+    private translation: Translation
   ) {
     this.languageSubject = new BehaviorSubject<string>('pl');
-    this.languageEventReader.event$.subscribe(language => {
+    this.subscription = this.languageEventReader.event$.subscribe(language => {
       this.languageSubject.next(language);
     });
   }
@@ -27,5 +29,12 @@ export class LanguageTranslationService {
     return this.language$.pipe(
       map(() => this.translate(key, params))
     );
+  }
+
+  // Angular lifecycle hook for cleanup
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
