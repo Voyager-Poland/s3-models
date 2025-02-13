@@ -1,4 +1,10 @@
-import { InjectionToken } from "@angular/core";
-import { Translation } from "../interfaces/translation";
+import { InjectionToken } from '@angular/core';
+import { Translation } from '../interfaces/translation';
 
-//export const TRANSLATION_TOKEN = new InjectionToken<Translation>('Translation');
+let injectionToken: InjectionToken<Translation>;
+export function TranslationToken(): InjectionToken<Translation> {
+  if (!injectionToken) {
+    injectionToken = new InjectionToken<Translation>('Translation');
+  }
+  return injectionToken;
+}
