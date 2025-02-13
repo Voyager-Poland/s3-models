@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "ES2022",
+		"target": "es6",
 		"module": "commonjs",
 		"outDir": "./dist",
 		"rootDir": "./src",
@@ -11,12 +11,17 @@
 		"declarationDir": "./dist/types",
 		"sourceMap": true,
 		"moduleResolution": "node",
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
 	},
 	"include": [
-		"src/**/*"
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"tests/**/*.ts",
+		"tests/**/*.tsx"
 	],
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"dist"
 	]
 }

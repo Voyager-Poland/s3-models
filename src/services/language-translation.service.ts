@@ -11,8 +11,8 @@ export class LanguageTranslationService implements OnDestroy {
     private languageEventReader: LanguageEventReader,
     private translation: Translation
   ) {
-    this.languageSubject = new BehaviorSubject<string>('pl');
-    this.subscription = this.languageEventReader.event$.subscribe(language => {
+    this.languageSubject = new BehaviorSubject<string>("pl");
+    this.subscription = this.languageEventReader.event$.subscribe((language) => {
       this.languageSubject.next(language);
     });
   }
@@ -26,9 +26,7 @@ export class LanguageTranslationService implements OnDestroy {
   }
 
   getTranslation$(key: string, params?: any): Observable<string> {
-    return this.language$.pipe(
-      map(() => this.translate(key, params))
-    );
+    return this.language$.pipe(map(() => this.translate(key, params)));
   }
 
   // Angular lifecycle hook for cleanup
