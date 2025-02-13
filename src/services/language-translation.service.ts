@@ -1,9 +1,8 @@
 import { BehaviorSubject, map, Observable, Subscription } from 'rxjs';
 import { Translation } from '../interfaces/translation';
 import { LanguageEventReader } from './language-event-reader';
-import { OnDestroy } from '@angular/core';
 
-export class LanguageTranslationService implements OnDestroy {
+export class LanguageTranslationService {
   private languageSubject: BehaviorSubject<string>;
   private subscription: Subscription;
 
@@ -29,8 +28,7 @@ export class LanguageTranslationService implements OnDestroy {
     return this.language$.pipe(map(() => this.translate(key, params)));
   }
 
-  // Angular lifecycle hook for cleanup
-  ngOnDestroy(): void {
+  destroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

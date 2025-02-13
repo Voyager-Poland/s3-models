@@ -1,9 +1,8 @@
 import { EventReader } from '../interfaces/event-reader';
 import { ProtectState } from '../interfaces/protect-state';
 import { Subscription } from 'rxjs';
-import { OnDestroy } from '@angular/core';
 
-export class SaveEventBus<T> implements OnDestroy {
+export class SaveEventBus<T>  {
   private subscription: Subscription;
 
   constructor(private store: ProtectState<T>, private reader: EventReader<T>) {
@@ -19,8 +18,7 @@ export class SaveEventBus<T> implements OnDestroy {
     }
   }
 
-  // Angular lifecycle hook for cleanup
-  ngOnDestroy(): void {
+  destroy(): void {
     this.unsubscribe();
   }
 }
