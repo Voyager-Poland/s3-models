@@ -16,7 +16,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@types/jasmine": "^5.0.0",
-		"@types/node": "^17.0.0",
+		"@types/node": "^22.0.0",
 		"jasmine-core": "^5.00.0",
 		"karma": "^6.4.4",
 		"karma-chrome-launcher": "^3.2.0",
