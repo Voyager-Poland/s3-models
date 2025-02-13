@@ -15,9 +15,9 @@
 	"author": "Andrzej Świstowski <andrzej.swistowski@voyager.pl>",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/jasmine": "^3.10.18",
+		"@types/jasmine": "^4.0.0",
 		"@types/node": "^14.0.0",
-		"jasmine-core": "^4.00.0",
+		"jasmine-core": "^5.00.0",
 		"karma": "^6.4.4",
 		"karma-chrome-launcher": "^3.2.0",
 		"karma-jasmine": "^5.0.2",
