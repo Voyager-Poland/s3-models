@@ -7,13 +7,18 @@ export class StateSaverService<T> {
 
 	constructor(private store: StateSaver<T>, private reader: EventReader<T>) {
 	}
+	
+	saveState(value: T): void {
+		this.store.saveState(value);
+	}
 
 	public start(): void {
 		this.subscription = this.reader.event$.subscribe((state: T) => {
-			this.store.saveState(state);
+			this.saveState(state);
 		})
-
 	}
+
+
 	// Method to unsubscribe from the event stream
 	unsubscribe(): void {
 		if (this.subscription) {
