@@ -5,8 +5,8 @@ export { ProfileTokenModel } from './models/profile.token.model';
 export { Translation } from './interfaces/translation';
 export { EventEmitter } from './interfaces/event-emitter';
 export { EventReader } from './interfaces/event-reader';
-export { ProtectState } from './interfaces/protect-state';
-export { ReadState } from './interfaces/read-state';
+export { StateSaver } from './interfaces/state-saver';
+export { InitialStateProvider } from './interfaces/internal-state.proviider';
 
 // Exporting services
 export { StringEventBusService } from './services/string-bus.service';

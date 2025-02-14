@@ -1,13 +1,13 @@
 import { EventReader } from '../interfaces/event-reader';
-import { ProtectState } from '../interfaces/protect-state';
+import { StateSaver } from '../interfaces/state-saver';
 import { Subscription } from 'rxjs';
 
 export class StateSaverService<T>  {
   private subscription: Subscription;
 
-  constructor(private store: ProtectState<T>, private reader: EventReader<T>) {
+  constructor(private store: StateSaver<T>, private reader: EventReader<T>) {
     this.subscription = reader.event$.subscribe((state: T) => {
-      store.save(state);
+      store.saveState(state);
     })
   }
 

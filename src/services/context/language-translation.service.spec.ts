@@ -1,7 +1,7 @@
-import { LanguageTranslationService } from './context/language-translation.service';
-import { LanguageEventReader } from './context/language-event-reader';
-import { Translation } from '../interfaces/translation';
-import { LanguageEventBusService } from './context/language-bus.service';
+import { LanguageTranslationService } from './language-translation.service';
+import { LanguageEventReader } from './language-event-reader';
+import { Translation } from '../../interfaces/translation';
+import { LanguageEventBusService } from './language-bus.service';
 
 describe('LanguageTranslationService', () => {
   let service: LanguageTranslationService;
