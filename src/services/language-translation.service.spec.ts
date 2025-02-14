@@ -1,4 +1,3 @@
-import { BehaviorSubject } from 'rxjs';
 import { LanguageTranslationService } from './language-translation.service';
 import { LanguageEventReader } from './language-event-reader';
 import { Translation } from '../interfaces/translation';
@@ -11,7 +10,6 @@ describe('LanguageTranslationService', () => {
   let languageService: LanguageEventBusService;
 
   beforeEach(() => {
-    // Mock the LanguageEventReader
     languageService = new LanguageEventBusService();
     languageEventReader = new LanguageEventReader(languageService);
 
