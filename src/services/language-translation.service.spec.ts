@@ -1,7 +1,7 @@
-import { LanguageTranslationService } from './language-translation.service';
-import { LanguageEventReader } from './language-event-reader';
+import { LanguageTranslationService } from './context/language-translation.service';
+import { LanguageEventReader } from './context/language-event-reader';
 import { Translation } from '../interfaces/translation';
-import { LanguageEventBusService } from './language-bus.service';
+import { LanguageEventBusService } from './context/language-bus.service';
 
 describe('LanguageTranslationService', () => {
   let service: LanguageTranslationService;
@@ -13,7 +13,6 @@ describe('LanguageTranslationService', () => {
     languageService = new LanguageEventBusService();
     languageEventReader = new LanguageEventReader(languageService);
 
-    // Mock the Translation service
     translation = {
       translate: jest.fn((key: string, params?: any) => {
         return `${key}-translated`;

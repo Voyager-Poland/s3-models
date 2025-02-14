@@ -1,4 +1,4 @@
-import { EventBus } from '../abstract/event-bus';
+import { EventBus } from '../../abstract/event-bus';
 
 /**
  * Service for managing language events.

@@ -2,7 +2,7 @@ import { EventReader } from '../interfaces/event-reader';
 import { ProtectState } from '../interfaces/protect-state';
 import { Subscription } from 'rxjs';
 
-export class SaveEventBus<T>  {
+export class StateSaverService<T>  {
   private subscription: Subscription;
 
   constructor(private store: ProtectState<T>, private reader: EventReader<T>) {
