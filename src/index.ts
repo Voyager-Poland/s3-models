@@ -6,7 +6,7 @@ export { Translation } from './interfaces/translation';
 export { EventEmitter } from './interfaces/event-emitter';
 export { EventReader } from './interfaces/event-reader';
 export { StateSaver } from './interfaces/state-saver';
-export { InitialStateProvider } from './interfaces/internal-state.proviider';
+export { InitialStateProvider } from './interfaces/internal-state.provider';
 
 // Exporting services
 export { StringEventBusService } from './services/string-bus.service';
