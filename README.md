@@ -51,6 +51,7 @@ export interface EventEmitter<T> {
   emitEvent(event: T): void;
   get getCurrentValue(): T;
 }
+```
 
 ### EventReader
 
@@ -72,30 +73,26 @@ To use the services provided by `s3-models` in your Angular application, you nee
 
 Example:
 
-
 ```typescript
 import { InjectionToken } from '@angular/core';
 import { Translation } from 's3-models';
 
 export const TRANSLATION_TOKEN = new InjectionToken<Translation>('Translation');
-
 ```
 
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { ProfileEventBusService, LanguageEventBusService, CurrencyEventBusService, StringEventBusService, ProfilEventEmiter, ProfilEventReader, LanguageEventEmitter, LanguageEventReader, CurrencyEventEmitter, CurrencyEventReader } from 's3-models';
-
-
+import { ProfileEventBusService, LanguageEventBusService, CurrencyEventBusService, StringEventBusService, ProfileEventEmitter, ProfileEventReader, LanguageEventEmitter, LanguageEventReader, CurrencyEventEmitter, CurrencyEventReader } from 's3-models';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule],
   providers: [
 		ProfileEventBusService,
-		{ provide: ProfilEventEmiter, useFactory: (profileService: ProfileEventBusService) => new ProfilEventEmiter(profileService), deps: [ProfileEventBusService] },
-		{ provide: ProfilEventReader, useFactory: (profileService: ProfileEventBusService) => new ProfilEventReader(profileService), deps: [ProfileEventBusService] },
+		{ provide: ProfileEventEmitter, useFactory: (profileService: ProfileEventBusService) => new ProfileEventEmitter(profileService), deps: [ProfileEventBusService] },
+		{ provide: ProfileEventReader, useFactory: (profileService: ProfileEventBusService) => new ProfileEventReader(profileService), deps: [ProfileEventBusService] },
 		CurrencyEventBusService,
 		{ provide: CurrencyEventEmitter, useFactory: (currencyService: CurrencyEventBusService) => new CurrencyEventEmitter(currencyService), deps: [CurrencyEventBusService] },
 		{ provide: CurrencyEventReader, useFactory: (currencyService: CurrencyEventBusService) => new CurrencyEventReader(currencyService), deps: [CurrencyEventBusService] },
@@ -136,7 +133,6 @@ constructor(
 }
 ```
 
-
 ### CurrencyEventBusService
 
 The `CurrencyEventBusService` class extends the `EventBus` class to handle events of type `string`, with 'PLN' as the default currency.
@@ -167,37 +163,11 @@ Example usage:
 
 ```typescript
 import { Inject } from '@angular/core';
-import { ProfileEventBusService, ProfileTokenModel } from 's3-models';
+import { ProfileEventBusService, ProfileTokenModel, ProfileEventEmitter, ProfileEventReader } from 's3-models';
 
 constructor(
-  @Inject('ProfileEventEmitter') private profileEventEmitter: ProfileEventBusService,
-  @Inject('ProfileEventReader') private profileEventReader: ProfileEventBusService
-) {
-  this.profileEventReader.event$.subscribe(profile => {
-    console.log('Profile changed:', profile);
-  });
-
-  const newProfile = new ProfileTokenModel({
-    token: 'new-token',
-    initials: 'NT',
-    profilePictureUri: 'http://example.com/new-pic.jpg'
-  });
-  this.profileEventEmitter.emitEvent(newProfile);
-}
-```
-### ProfileEventBusService
-
-The `ProfileEventBusService` class extends the `EventBus` class to handle events of type `ProfileTokenModel`.
-
-Example usage:
-
-```typescript
-import { Inject } from '@angular/core';
-import { ProfileTokenModel, ProfilEventEmiter, ProfilEventReader } from 's3-models';
-
-constructor(
-  @Inject('ProfileEventEmitter') private profileEventEmitter: ProfilEventEmiter,
-  @Inject('ProfileEventReader') private profileEventReader: ProfilEventReader
+  @Inject('ProfileEventEmitter') private profileEventEmitter: ProfileEventEmitter,
+  @Inject('ProfileEventReader') private profileEventReader: ProfileEventReader
 ) {
   this.profileEventReader.event$.subscribe(profile => {
     console.log('Profile changed:', profile);
@@ -307,4 +277,4 @@ The `EventBus` class is an abstract class that provides a mechanism for emitting
 
 ## License
 
-This project is licensed under the MTI License.
+This project is licensed under the MIT License.
