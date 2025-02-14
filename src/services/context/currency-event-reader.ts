@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { EventReader } from '../interfaces/event-reader';
-import { CurrencyEventBusService } from './context/currency-bus.service';
+import { EventReader } from '../../interfaces/event-reader';
+import { CurrencyEventBusService } from './currency-bus.service';
 
 
 

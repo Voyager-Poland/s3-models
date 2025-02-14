@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { EventReader } from '../interfaces/event-reader';
-import { LanguageEventBusService } from './context/language-bus.service';
+import { EventReader } from '../../interfaces/event-reader';
+import { LanguageEventBusService } from './language-bus.service';
 
 
 export class LanguageEventReader implements EventReader<string> {
