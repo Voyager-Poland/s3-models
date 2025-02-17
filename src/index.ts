@@ -31,6 +31,7 @@ export { CookieStore } from './services/stores/cookie-store';
 export { SSRStore } from './services/stores/ssr-store';
 export { OptionsProcessor } from './services/stores/options-processor';
 export { ProfileTokenCookieStore } from './services/stores/profile-cookie-store';
+export { StateManagementService } from './services/stores/state-management.service';
 
 // Exporting abstract classes
 export { EventBus } from './abstract/event-bus';

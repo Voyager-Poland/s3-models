@@ -4,6 +4,7 @@ import { OptionsProcessor } from './options-processor';
 
 export class CookieStore<T> implements Store<T> {
 	private optionsProcessor: OptionsProcessor;
+
 	constructor(private key: string, options: CookieOptions = {}) {
 		this.optionsProcessor = new OptionsProcessor(options);
 	}
@@ -34,5 +35,4 @@ export class CookieStore<T> implements Store<T> {
 	protected deserialize(value: string): T {
 		return JSON.parse(value);
 	}
-
 }
