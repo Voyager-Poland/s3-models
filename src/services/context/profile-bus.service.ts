@@ -1,7 +1,7 @@
-import { EventBus } from '../abstract/event-bus';
-import { EventReader } from '../interfaces/event-reader';
-import { EventEmitter } from '../interfaces/event-emitter';
-import { ProfileTokenModel } from '../models/profile.token.model';
+import { EventBus } from '../../abstract/event-bus';
+import { EventReader } from '../../interfaces/event-reader';
+import { EventEmitter } from '../../interfaces/event-emitter';
+import { ProfileTokenModel } from '../../models/profile.token.model';
 
 /**
  * Service for managing profile events.

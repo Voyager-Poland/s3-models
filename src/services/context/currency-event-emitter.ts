@@ -1,4 +1,4 @@
-import { EventEmitter } from '../interfaces/event-emitter';
+import { EventEmitter } from '../../interfaces/event-emitter';
 import { CurrencyEventBusService } from './currency-bus.service';
 
 

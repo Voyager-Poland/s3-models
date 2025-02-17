@@ -1,9 +1,9 @@
-import { EventEmitter } from '../interfaces/event-emitter';
-import { ProfileTokenModel } from '../models/profile.token.model';
+import { EventEmitter } from '../../interfaces/event-emitter';
+import { ProfileTokenModel } from '../../models/profile.token.model';
 import { ProfileEventBusService } from './profile-bus.service';
 
 
-export class ProfilEventEmiter implements EventEmitter<ProfileTokenModel> {
+export class ProfileEventEmitter implements EventEmitter<ProfileTokenModel> {
 	constructor(private service: ProfileEventBusService) {
 	}
 

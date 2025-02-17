@@ -1,5 +1,5 @@
-import { ProfileEventBusService } from './profile-bus.service';
-import { ProfileTokenModel } from '../models/profile.token.model';
+import { ProfileEventBusService } from "./profile-bus.service";
+import { ProfileTokenModel } from "../../models/profile.token.model";
 
 describe('ProfileEventBusService', () => {
   let service: ProfileEventBusService;
