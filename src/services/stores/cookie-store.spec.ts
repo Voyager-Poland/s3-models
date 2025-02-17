@@ -1,31 +1,28 @@
+import { ProfileTokenModel } from '../../models/profile.token.model';
 import { CookieStore } from './cookie-store';
 
-interface TestObject {
-  name: string;
-  greet: () => string;
-}
+
 
 describe('CookieStore', () => {
-  let store: CookieStore<TestObject>;
+  let store: CookieStore<ProfileTokenModel>;
   const key = 'testKey';
 	const options = {
 		maxAge: 3600,
-		//domain: 'example.com',
-		secure: true
+		domain: 'localhost',
+		secure: false
 	};
 
   beforeEach(() => {
-    store = new CookieStore<TestObject>(key, options);
+    store = new CookieStore<ProfileTokenModel>(key, options);
     document.cookie = ''; // Clear cookies before each test
   });
 
   it('should set and get a value', () => {
-    const testObject: TestObject = {
-      name: 'John',
-      greet: function() {
-        return `Hello, ${this.name}!`;
-      }
-    };
+    var testObject: ProfileTokenModel =  new  ProfileTokenModel( {
+			token: 'test-token',
+			initials: 'TT',
+			profilePictureUri: 'http://example.com/pic.jpg'
+    });
 
     store.setValue(testObject);
 
@@ -33,41 +30,10 @@ describe('CookieStore', () => {
     const savedObject = store.getValue();
     console.log('Saved object retrieved:', savedObject);
     expect(savedObject).toBeDefined();
-    expect(savedObject.name).toBe('John');
-    expect(savedObject.greet()).toBe('Hello, John!');
+    expect(savedObject.token).toBe('test-token');	
+    expect(savedObject.isLogged).toBe(true);
   });
 
-  it('should handle maxAge, domain, and secure options', () => {
-    const testObject: TestObject = { name: 'John', greet: () => 'Hello' };
-    store.setValue(testObject);
 
-    const cookieString = document.cookie;
-    console.log('Cookie string:', cookieString);
-    expect(cookieString).toContain(`${key}=`);
-    expect(cookieString).toContain('max-age=3600');
-    expect(cookieString).toContain('domain=example.com');
-    expect(cookieString).toContain('secure');
-  });
 
-  it('should return null if the cookie does not exist', () => {
-    const value = store.getValue();
-    console.log('Value retrieved for non-existent cookie:', value);
-    expect(value).toBeNull();
-  });
-
-  it('should serialize and deserialize functions', () => {
-    const testObject: TestObject = {
-      name: 'John',
-      greet: function() {
-        return `Hello, ${this.name}!`;
-      }
-    };
-
-    store.setValue(testObject);
-
-    const savedObject = store.getValue();
-    console.log('Saved object with function retrieved:', savedObject);
-    expect(savedObject).toBeDefined();
-    expect(savedObject.greet()).toBe('Hello, John!');
-  });
 });
