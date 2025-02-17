@@ -16,9 +16,11 @@ export class CookieStore<T> implements Store<T> {
       ?.split('=')[1];
 
     if (cookieValue) {
+      console.log(`Cookie value found: ${cookieValue}`);
       return this.deserialize(decodeURIComponent(cookieValue));
     }
 
+    console.log(`Cookie with key "${this.key}" not found.`);
     return null as unknown as T;
   }
 
@@ -39,6 +41,7 @@ export class CookieStore<T> implements Store<T> {
     }
 
     document.cookie = cookieString;
+    console.log(`Cookie set: ${cookieString}`);
   }
 
   private serialize(value: T): string {
