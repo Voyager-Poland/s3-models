@@ -1,4 +1,5 @@
-import { CookieOptions, CookieStore } from './cookie-store';
+import { CookieStore } from './cookie-store';
+import { CookieOptions } from '../../interfaces/cookie-options';
 import { ProfileTokenModel } from '../../models/profile.token.model';
 
 export class ProfileTokenCookieStore extends CookieStore<ProfileTokenModel> {

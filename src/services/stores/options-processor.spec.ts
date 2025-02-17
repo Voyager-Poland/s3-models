@@ -1,5 +1,5 @@
 import { OptionsProcessor } from './options-processor';
-import { CookieOptions } from './cookie-store';
+import { CookieOptions } from '../../interfaces/cookie-options';
 
 describe('OptionsProcessor', () => {
 	it('should return correct maxAge string', () => {
@@ -38,15 +38,27 @@ describe('OptionsProcessor', () => {
 		expect(processor.secure).toBe('');
 	});
 
-	it('should return correct combined value string', () => {
-		const options: CookieOptions = { maxAge: 3600, domain: 'example.com', secure: true };
+	it('should return correct sameSite string', () => {
+		const options: CookieOptions = { sameSite: 'Strict' };
 		const processor = new OptionsProcessor(options);
-		expect(processor.value).toBe('max-age=3600; domain=example.com; secure;');
+		expect(processor.sameSite).toBe('SameSite=Strict;');
+	});
+
+	it('should return empty sameSite string if not set', () => {
+		const options: CookieOptions = {};
+		const processor = new OptionsProcessor(options);
+		expect(processor.sameSite).toBe('');
+	});
+
+	it('should return correct combined value string', () => {
+		const options: CookieOptions = { maxAge: 3600, domain: 'example.com', secure: true, sameSite: 'Strict' };
+		const processor = new OptionsProcessor(options);
+		expect(processor.value).toBe('max-age=3600; domain=example.com; secure; SameSite=Strict;');
 	});
 
 	it('should return correct combined value string with some options missing', () => {
 		const options: CookieOptions = { maxAge: 3600, secure: true };
 		const processor = new OptionsProcessor(options);
-		expect(processor.value).toBe('max-age=3600;  secure;');
+		expect(processor.value).toBe('max-age=3600;  secure; ');
 	});
 });

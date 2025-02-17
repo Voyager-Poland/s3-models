@@ -1,4 +1,4 @@
-import { CookieOptions } from './cookie-store';
+import { CookieOptions } from '../../interfaces/cookie-options';
 
 export class OptionsProcessor {
 	constructor(private options: CookieOptions) { }
@@ -15,7 +15,11 @@ export class OptionsProcessor {
 		return this.options.secure ? 'secure;' : '';
 	}
 
+	get sameSite() {
+		return this.options.sameSite ? `SameSite=${this.options.sameSite};` : '';
+	}
+
 	get value() {
-		return `${this.maxAge} ${this.domain} ${this.secure}`;
+		return `${this.maxAge} ${this.domain} ${this.secure} ${this.sameSite}`;
 	}
 }

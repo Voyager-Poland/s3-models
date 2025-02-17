@@ -7,6 +7,8 @@ export { EventEmitter } from './interfaces/event-emitter';
 export { EventReader } from './interfaces/event-reader';
 export { StateSaver } from './interfaces/state-saver';
 export { InitialStateProvider } from './interfaces/internal-state.provider';
+export { Store } from './interfaces/store';
+export { CookieOptions } from './interfaces/cookie-options';
 
 // Exporting services
 export { StringEventBusService } from './services/string-bus.service';
@@ -23,6 +25,12 @@ export { CurrencyEventReader } from './services/context/currency-event-reader';
 export { LanguageEventEmitter } from './services/context/language-event-emitter';
 export { LanguageEventReader } from './services/context/language-event-reader';
 export { LanguageTranslationService } from './services/context/language-translation.service';
+
+// Exporting store services
+export { CookieStore } from './services/stores/cookie-store';
+export { SSRStore } from './services/stores/ssr-store';
+export { OptionsProcessor } from './services/stores/options-processor';
+export { ProfileTokenCookieStore } from './services/stores/profile-cookie-store';
 
 // Exporting abstract classes
 export { EventBus } from './abstract/event-bus';

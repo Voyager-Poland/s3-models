@@ -1,12 +1,6 @@
 import { Store } from '../../interfaces/store';
+import { CookieOptions } from '../../interfaces/cookie-options';
 import { OptionsProcessor } from './options-processor';
-
-
-export interface CookieOptions {
-	maxAge?: number;
-	domain?: string;
-	secure?: boolean;
-}
 
 export class CookieStore<T> implements Store<T> {
 	private optionsProcessor: OptionsProcessor;
