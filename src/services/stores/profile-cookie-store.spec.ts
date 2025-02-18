@@ -12,7 +12,7 @@ describe('ProfileTokenCookieStore', () => {
 
 	beforeEach(() => {
 		store = new ProfileTokenCookieStore(key, options);
-		document.cookie = ''; // Clear cookies before each test
+		document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`; // Clear cookies before each test
 	});
 
 	it('should set and get a ProfileTokenModel value', () => {
@@ -33,5 +33,13 @@ describe('ProfileTokenCookieStore', () => {
 		expect(savedObject.isLogged).toBe(true);
 	});
 
+	it('should return emptyToken if the cookie is empty', () => {
 
+		const value = store.getValue();
+		expect(value).toBeDefined();
+		expect(value.token).toBe('');
+		expect(value.initials).toBe('');
+		expect(value.profilePictureUri).toBe('');
+		expect(value.isLogged).toBe(false);
+	});
 });

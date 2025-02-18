@@ -8,7 +8,19 @@ export class ProfileTokenCookieStore extends CookieStore<ProfileTokenModel> {
 	}
 
 	protected deserialize(value: string): ProfileTokenModel {
-		var baseValue = super.deserialize(value);
+		const baseValue = super.deserialize(value);
+		if (!baseValue) {
+			return ProfileTokenModel.createEmpty();
+
+		}
 		return new ProfileTokenModel(baseValue);
+	}
+
+	override getValue(): ProfileTokenModel {
+		const value = super.getValue();
+		if (!value) {
+			return ProfileTokenModel.createEmpty();
+		}
+		return value;
 	}
 }
