@@ -29,6 +29,7 @@ export { LanguageEventEmitter } from './services/context/language-event-emitter'
 export { LanguageEventReader } from './services/context/language-event-reader';
 export { LanguageTranslationService } from './services/context/language-translation.service';
 export { ProfileTokenValue } from './services/profile-token-value';
+export { ProfileService } from './services/context/profile.service';
 
 // Exporting store services
 export { CookieStore } from './services/stores/cookie-store';
