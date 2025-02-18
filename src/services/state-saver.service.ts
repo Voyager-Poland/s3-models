@@ -1,15 +1,15 @@
 import { EventReader } from '../interfaces/event-reader';
-import { StateSaver } from '../interfaces/state-saver';
 import { Subscription } from 'rxjs';
+import { Store } from '../interfaces/store';
 
 export class StateSaverService<T> {
 	private subscription: Subscription | undefined;
 
-	constructor(private store: StateSaver<T>, private reader: EventReader<T>) {
+	constructor(private store: Store<T>, private reader: EventReader<T>) {
 	}
-	
+
 	saveState(value: T): void {
-		this.store.saveState(value);
+		this.store.setValue(value);
 	}
 
 	public start(): void {

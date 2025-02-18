@@ -1,4 +1,3 @@
-import { StateSaver } from "../../interfaces/state-saver";
 import { ProfileTokenModel } from "../../models/profile.token.model";
 import { ClientCallbackService } from "../client-callback.service";
 import { StateInitializerService } from "../state-initializer.service";
