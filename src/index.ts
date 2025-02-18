@@ -37,7 +37,7 @@ export { SSRStore } from './services/stores/ssr-store';
 export { ProfileSSRStore } from './services/stores/profile-ssr-store';
 export { OptionsProcessor } from './services/stores/options-processor';
 export { ProfileTokenCookieStore } from './services/stores/profile-cookie-store';
-export { StateManagementService } from './services/stores/state-management.service';
+export { IntialStateService as StateManagementService } from './services/stores/initiall-state.service';
 export { StateComparisonService } from './services/stores/state-comparison.service';
 // Exporting abstract classes
 export { EventBus } from './abstract/event-bus';
