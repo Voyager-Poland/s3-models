@@ -1,5 +1,3 @@
-import { InitialStateProvider } from '../../interfaces/internal-state.provider';
-import { StateSaver } from '../../interfaces/state-saver';
 import { Store } from '../../interfaces/store';
 
 export class SSRStore<T> implements Store<T> {
@@ -14,3 +12,4 @@ export class SSRStore<T> implements Store<T> {
 		this.store = value;
 	}
 }
+
