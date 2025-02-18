@@ -9,11 +9,14 @@ export { StateSaver } from './interfaces/state-saver';
 export { InitialStateProvider } from './interfaces/internal-state.provider';
 export { Store } from './interfaces/store';
 export { CookieOptions } from './interfaces/cookie-options';
+export { ClientInfo } from './interfaces/client-info';
 
 // Exporting services
 export { StringEventBusService } from './services/string-bus.service';
 export { StateSaverService } from './services/state-saver.service';
 export { StateInitializerService } from './services/state-initializer.service';
+export { ClientCallbackService } from './services/client-callback.service';
+
 // Exporting services/context
 export { ProfileEventBusService } from './services/context/profile-bus.service';
 export { LanguageEventBusService } from './services/context/language-bus.service';
