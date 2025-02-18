@@ -32,6 +32,7 @@ export { LanguageTranslationService } from './services/context/language-translat
 // Exporting store services
 export { CookieStore } from './services/stores/cookie-store';
 export { SSRStore } from './services/stores/ssr-store';
+export { ProfileSSRStore } from './services/stores/profile-ssr-store';
 export { OptionsProcessor } from './services/stores/options-processor';
 export { ProfileTokenCookieStore } from './services/stores/profile-cookie-store';
 export { StateManagementService } from './services/stores/state-management.service';
