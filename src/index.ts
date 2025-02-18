@@ -28,6 +28,7 @@ export { CurrencyEventReader } from './services/context/currency-event-reader';
 export { LanguageEventEmitter } from './services/context/language-event-emitter';
 export { LanguageEventReader } from './services/context/language-event-reader';
 export { LanguageTranslationService } from './services/context/language-translation.service';
+export { ProfileTokenValue } from './services/profile-token-value';
 
 // Exporting store services
 export { CookieStore } from './services/stores/cookie-store';
@@ -37,7 +38,6 @@ export { OptionsProcessor } from './services/stores/options-processor';
 export { ProfileTokenCookieStore } from './services/stores/profile-cookie-store';
 export { StateManagementService } from './services/stores/state-management.service';
 export { StateComparisonService } from './services/stores/state-comparison.service';
-
 // Exporting abstract classes
 export { EventBus } from './abstract/event-bus';
 
