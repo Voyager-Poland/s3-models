@@ -18,7 +18,9 @@
 		"resolveJsonModule": true,
 		"paths": {
 			"@services/*": [
-				"src/services/*"
+				"src/services/*",
+				"src/services/context/*",
+				"src/services/store/*"
 			]
 		}
 	},
@@ -27,15 +29,5 @@
 		"strictInjectionParameters": true,
 		"strictInputAccessModifiers": true,
 		"strictTemplates": true
-	},
-	"include": [
-		"src/**/*.ts",
-		"src/**/*.tsx",
-		"tests/**/*.ts",
-		"tests/**/*.tsx"
-	],
-	"exclude": [
-		"node_modules",
-		"dist"
-	]
+	}
 }
