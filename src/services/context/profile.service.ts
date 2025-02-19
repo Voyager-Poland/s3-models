@@ -1,5 +1,5 @@
 import { ProfileTokenModel } from "../../models/profile.token.model";
-import { ClientCallbackService } from "../client-callback.service";
+import { ClientCallbackService } from "@services/client-callback.service";
 import { StateInitializerService } from "../state-initializer.service";
 import { StateSaverService } from "../state-saver.service";
 import { StateComparisonService } from "../stores/state-comparison.service";
