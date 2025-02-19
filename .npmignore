@@ -7,3 +7,5 @@ coverage
 *.spec.ts
 jest.conf.js
 compass.yml
+.github
+jest*
