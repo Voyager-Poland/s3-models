@@ -1,8 +1,6 @@
 import { pathsToModuleNameMapper } from 'ts-jest';
 import { defaults } from 'jest-config';
 import { createRequire } from 'module';
-import { config } from 'process';
-
 
 const require = createRequire(import.meta.url);
 
@@ -13,17 +11,14 @@ export default {
 	setupFilesAfterEnv: ['<rootDir>/src/setup-jest.ts'],
 	testEnvironment: 'jsdom',
 	transform: {
-		'^.+\\.(ts|html)$': 'ts-jest',
+		'^.+\\.(ts|html)$': ['ts-jest', {
+			tsconfig: '<rootDir>/tsconfig.spec.json',
+			stringifyContentPathRegex: '\\.html$',
+		}],
 		'^.+\\.mjs$': 'babel-jest', // Add this line to handle ES modules
 	},
 	moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'html', 'mjs'],
 	transformIgnorePatterns: [
 		'node_modules/(?!@angular|rxjs)', // Add this line to handle ES modules in node_modules
 	],
-	globals: {
-		'ts-jest': {
-			tsconfig: '<rootDir>/tsconfig.spec.json',
-			stringifyContentPathRegex: '\\.html$',
-		},
-	},
 };

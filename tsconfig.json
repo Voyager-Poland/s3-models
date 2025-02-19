@@ -28,7 +28,7 @@
 		"tests/**/*.ts",
 		"tests/**/*.tsx",
 		"setup-jest.ts"
-	],
+, "src/services/stores/options-processor.specm.ts"	],
 	"exclude": [
 		"node_modules",
 		"dist"
