@@ -21,6 +21,15 @@
 				"src/services/*",
 				"src/services/context/*",
 				"src/services/store/*"
+			],
+			"@models/*": [
+				"src/models/*"
+			],
+			"@interfaces/*": [
+				"src/interfaces/*"
+			],
+			"@abstract/*": [
+				"src/abstract/*"
 			]
 		}
 	},
@@ -29,5 +38,11 @@
 		"strictInjectionParameters": true,
 		"strictInputAccessModifiers": true,
 		"strictTemplates": true
-	}
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"tests/**/*.ts",
+		"tests/**/*.tsx"
+	]
 }

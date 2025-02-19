@@ -2,7 +2,10 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"esModuleInterop": true,
-		"module": "ES2022"
+		"module": "ES2022",
+		"types": [
+			"jest"
+		]
 	},
 	"include": [
 		"src/**/*.spec.ts",
