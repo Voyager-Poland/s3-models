@@ -1,4 +1,4 @@
-import { Store } from 'src/interfaces/store';
+import { Store } from '../../interfaces/store';
 import { CookieOptions } from '../../interfaces/cookie-options';
 import { OptionsProcessor } from './options-processor';
 

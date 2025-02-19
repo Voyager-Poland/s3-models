@@ -1,4 +1,4 @@
-import { ClientInfo } from "src/interfaces/client-info";
+import { ClientInfo } from "../../interfaces/client-info";
 
 export class ClientCallbackService {
 	constructor(private clientInfo: ClientInfo) { }

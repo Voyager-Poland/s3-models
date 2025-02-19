@@ -1,4 +1,4 @@
-import { CookieOptions } from "src/interfaces/cookie-options";
+import { CookieOptions } from "../../interfaces/cookie-options";
 
 export class OptionsProcessor {
 	constructor(private options: CookieOptions) { }

@@ -1,6 +1,6 @@
 import { StateInitializerService } from './state-initializer.service';
-import { InitialStateProvider } from 'src/interfaces/internal-state.provider';
-import { EventEmitter } from 'src/interfaces/event-emitter';
+import { InitialStateProvider } from '../interfaces/internal-state.provider';
+import { EventEmitter } from '../interfaces/event-emitter';
 import { jest } from '@jest/globals';
 
 describe('StateInitializerService', () => {
