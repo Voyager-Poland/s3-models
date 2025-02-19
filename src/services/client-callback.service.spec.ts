@@ -1,5 +1,6 @@
 import { ClientCallbackService } from './client-callback.service';
 import { ClientInfo } from '../interfaces/client-info';
+import { jest } from '@jest/globals';
 
 class MockClientInfo implements ClientInfo {
 	constructor(private isBrowserValue: boolean, private serviceVersion: string) { }

@@ -2,6 +2,7 @@ import { StateSaverService } from './state-saver.service';
 import { EventReader } from '../interfaces/event-reader';
 import { Observable, Subject } from 'rxjs';
 import { Store } from '../interfaces/store';
+import { jest } from '@jest/globals';
 
 describe('StateSaverService', () => {
 	let service: StateSaverService<string>;
@@ -13,7 +14,7 @@ describe('StateSaverService', () => {
 		eventSubject = new Subject<string>();
 
 		store = {
-			getValue: jest.fn(),
+			getValue: jest.fn<() => string>(),
 			setValue: jest.fn()
 		};
 
