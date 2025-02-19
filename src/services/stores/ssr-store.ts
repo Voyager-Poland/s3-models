@@ -1,4 +1,4 @@
-import { Store } from '../../interfaces/store';
+import { Store } from '@interfaces/store';
 
 export class SSRStore<T> implements Store<T> {
 	private store?: T

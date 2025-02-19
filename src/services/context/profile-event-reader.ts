@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { ProfileTokenModel } from '../../models/profile.token.model';
-import { EventReader } from '../../interfaces/event-reader';
+import { EventReader } from '@interfaces/event-reader';
 import { ProfileEventBusService } from './profile-bus.service';
 
 

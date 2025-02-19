@@ -1,5 +1,5 @@
 import { OptionsProcessor } from './options-processor';
-import { CookieOptions } from '../../interfaces/cookie-options';
+import { CookieOptions } from '@interfaces/cookie-options';
 
 describe('OptionsProcessor', () => {
 	it('should return correct maxAge string', () => {

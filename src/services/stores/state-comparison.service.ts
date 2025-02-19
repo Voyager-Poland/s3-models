@@ -1,5 +1,5 @@
-import { InitialStateProvider } from "../../interfaces/internal-state.provider";
-import { EventEmitter } from '../../interfaces/event-emitter';
+import { InitialStateProvider } from "@interfaces/internal-state.provider";
+import { EventEmitter } from '@interfaces/event-emitter';
 
 export class StateComparisonService<T> {
 	private intervalId: NodeJS.Timeout | null = null;
