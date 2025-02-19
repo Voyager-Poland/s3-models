@@ -1,18 +1,32 @@
 {
 	"compilerOptions": {
+		"baseUrl": "./",
 		"target": "ES2022",
-		"module": "commonjs",
+		"module": "ES2022",
 		"outDir": "./dist",
-		"rootDir": "./src",
 		"strict": true,
 		"esModuleInterop": true,
+		"noImplicitReturns": true,
 		"noImplicitAny": true,
 		"declaration": true,
 		"declarationDir": "./dist/types",
 		"sourceMap": true,
 		"moduleResolution": "node",
 		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"experimentalDecorators": true,
+		"resolveJsonModule": true,
+		"paths": {
+			"@services/*": [
+				"src/services/*"
+			]
+		}
+	},
+	"angularCompilerOptions": {
+		"enableI18nLegacyMessageIdFormat": false,
+		"strictInjectionParameters": true,
+		"strictInputAccessModifiers": true,
+		"strictTemplates": true
 	},
 	"include": [
 		"src/**/*.ts",

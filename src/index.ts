@@ -25,7 +25,7 @@ export { ProfileEventReader } from './services/context/profile-event-reader';
 export { CurrencyEventEmitter } from './services/context/currency-event-emitter';
 export { CurrencyEventReader } from './services/context/currency-event-reader';
 export { LanguageEventEmitter } from './services/context/language-event-emitter';
-export { LanguageEventReader } from './services/context/language-event-reader';
+export { LanguageEventReader } from '@services/context/language-event-reader';
 export { LanguageTranslationService } from './services/context/language-translation.service';
 export { ProfileTokenValue } from './services/profile-token-value';
 export { ProfileService } from './services/context/profile.service';
