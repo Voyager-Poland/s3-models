@@ -1,7 +1,7 @@
 import { StateSaverService } from './state-saver.service';
-import { EventReader } from '@interfaces/event-reader';
-import { Observable, Subject } from 'rxjs';
-import { Store } from '@interfaces/store';
+import { EventReader } from 'src/interfaces/event-reader';
+import { Subject } from 'rxjs';
+import { Store } from 'src/interfaces/store';
 import { jest } from '@jest/globals';
 
 describe('StateSaverService', () => {

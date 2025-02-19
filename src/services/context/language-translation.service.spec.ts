@@ -1,6 +1,6 @@
 import { LanguageTranslationService } from './language-translation.service';
 import { LanguageEventReader } from './language-event-reader';
-import { Translation } from '@interfaces/translation';
+import { Translation } from 'src/interfaces/translation';
 import { LanguageEventBusService } from './language-bus.service';
 import { jest } from '@jest/globals';
 

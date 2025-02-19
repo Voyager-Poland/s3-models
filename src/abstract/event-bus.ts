@@ -1,6 +1,6 @@
 import { BehaviorSubject, Observable } from 'rxjs';
-import { EventEmitter } from '@interfaces/event-emitter';
-import { EventReader } from '@interfaces/event-reader';
+import { EventEmitter } from 'src/interfaces/event-emitter';
+import { EventReader } from 'src/interfaces/event-reader';
 
 /**
  * Abstract class EventBus<T>

@@ -1,4 +1,4 @@
-import { EventEmitter } from '@interfaces/event-emitter';
+import { EventEmitter } from 'src/interfaces/event-emitter';
 import { ProfileTokenModel } from '../../models/profile.token.model';
 import { ProfileEventBusService } from './profile-bus.service';
 

@@ -1,4 +1,4 @@
-import { EventEmitter } from '@interfaces/event-emitter';
+import { EventEmitter } from "src/interfaces/event-emitter";
 import { LanguageEventBusService } from './language-bus.service';
 
 

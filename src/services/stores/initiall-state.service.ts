@@ -1,5 +1,5 @@
-import { InitialStateProvider } from '@interfaces/internal-state.provider';
-import { Store } from '@interfaces/store';
+import { InitialStateProvider } from "src/interfaces/internal-state.provider";
+import { Store } from 'src/interfaces/store';
 
 export class IntialStateService<T> implements InitialStateProvider<T> {
 	constructor(private store: Store<T>) { }

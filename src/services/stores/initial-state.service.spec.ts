@@ -1,6 +1,6 @@
 import { StateComparisonService } from './state-comparison.service';
-import { InitialStateProvider } from '@interfaces/internal-state.provider';
-import { EventEmitter } from '@interfaces/event-emitter';
+import { InitialStateProvider } from 'src/interfaces/internal-state.provider';
+import { EventEmitter } from 'src/interfaces/event-emitter';
 
 class MockInitialStateProvider<T> implements InitialStateProvider<T> {
 	constructor(private state: T) { }

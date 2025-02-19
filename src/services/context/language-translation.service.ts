@@ -1,5 +1,5 @@
 import { BehaviorSubject, map, Observable, Subscription } from 'rxjs';
-import { Translation } from '@interfaces/translation';
+import { Translation } from 'src/interfaces/translation';
 import { LanguageEventReader } from './language-event-reader';
 
 export class LanguageTranslationService {

@@ -1,5 +1,5 @@
-import { Store } from '@interfaces/store';
-import { CookieOptions } from '@interfaces/cookie-options';
+import { Store } from 'src/interfaces/store';
+import { CookieOptions } from '../../interfaces/cookie-options';
 import { OptionsProcessor } from './options-processor';
 
 export class CookieStore<T> implements Store<T> {
