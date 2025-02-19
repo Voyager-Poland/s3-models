@@ -1,3 +1,4 @@
+//npm test -- src/services/context/language-translation.service.spec.ts
 import { LanguageTranslationService } from './language-translation.service';
 import { LanguageEventReader } from './language-event-reader';
 import { Translation } from 'src/interfaces/translation';
