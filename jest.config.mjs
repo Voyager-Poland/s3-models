@@ -1,4 +1,14 @@
-module.exports = {
+import { pathsToModuleNameMapper } from 'ts-jest';
+import { defaults } from 'jest-config';
+import { createRequire } from 'module';
+import { config } from 'process';
+
+
+const require = createRequire(import.meta.url);
+
+export default {
+	bail: 2,
+	verbose: true,
 	preset: 'jest-preset-angular',
 	setupFilesAfterEnv: ['<rootDir>/src/setup-jest.ts'],
 	testEnvironment: 'jsdom',
@@ -6,7 +16,7 @@ module.exports = {
 		'^.+\\.(ts|html)$': 'ts-jest',
 		'^.+\\.mjs$': 'babel-jest', // Add this line to handle ES modules
 	},
-	moduleFileExtensions: ['ts', 'html', 'js', 'json', 'mjs'],
+	moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'html', 'mjs'],
 	transformIgnorePatterns: [
 		'node_modules/(?!@angular|rxjs)', // Add this line to handle ES modules in node_modules
 	],
