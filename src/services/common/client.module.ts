@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ClientCallbackService } from './client-callback.service';
 import { ClientInfoService } from './client-info.service';
-import { CLIENT_INFO_TOKEN } from '../../tokens';
+import { CLIENT_INFO_TOKEN } from '@tokens/tokens';
 
 @NgModule({
 	providers: [

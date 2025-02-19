@@ -20,7 +20,7 @@
 			"@services/*": [
 				"src/services/*",
 				"src/services/context/*",
-				"src/services/store/*",
+				"src/services/stores/*",
 				"src/services/common/*"
 			],
 			"@models/*": [
@@ -31,6 +31,9 @@
 			],
 			"@abstract/*": [
 				"src/abstract/*"
+			],
+			"@tokens/*": [
+				"src/tokens/*"
 			]
 		}
 	},
