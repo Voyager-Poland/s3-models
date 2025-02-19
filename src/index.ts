@@ -14,7 +14,7 @@ export { ClientInfo } from './interfaces/client-info';
 export { StringEventBusService } from './services/string-bus.service';
 export { StateSaverService } from './services/state-saver.service';
 export { StateInitializerService } from './services/state-initializer.service';
-export { ClientCallbackService } from './services/client-callback.service';
+export { ClientCallbackService } from '@services/client-callback.service';
 
 // Exporting services/context
 export { ProfileEventBusService } from './services/context/profile-bus.service';
