@@ -18,6 +18,10 @@
 		"resolveJsonModule": true,
 		"importHelpers": true,
 		"allowSyntheticDefaultImports": true,
+		"lib": [
+			"ES2021",
+			"DOM"
+		],
 	},
 	"angularCompilerOptions": {
 		"enableI18nLegacyMessageIdFormat": false,

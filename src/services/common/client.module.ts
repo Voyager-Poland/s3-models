@@ -1,11 +1,13 @@
 //npm test -- dist/services/common/client.module.spec.js                    
-import { Inject, inject, NgModule, PLATFORM_ID } from "@angular/core";
+import { inject, NgModule, PLATFORM_ID } from "@angular/core";
 import { ClientCallbackService } from "./client-callback.service";
 import { ClientInfoService } from "./client-info.service";
 import { CLIENT_INFO_TOKEN } from "../../tokens/tokens";
 import { ClientInfo } from "../../interfaces/client-info";
 
 @NgModule({
+	declarations: [ClientCallbackService],
+	imports: [NgModule],
 	providers: [
 		{ provide: ClientCallbackService, useFactory: (client: ClientInfo) => new ClientCallbackService(client), deps: [CLIENT_INFO_TOKEN] },
 		{
@@ -17,5 +19,9 @@ import { ClientInfo } from "../../interfaces/client-info";
 			deps: [PLATFORM_ID],
 		},
 	],
+	exports: [ClientCallbackService]
 })
 export class ClientModule { }
+
+
+
