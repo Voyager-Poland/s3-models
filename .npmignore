@@ -9,3 +9,7 @@ jest.conf.js
 compass.yml
 .github
 jest*
+src/**/*.spec.ts
+src/**/*.test.ts
+src/**/*.mock.ts
+ng-package.json
