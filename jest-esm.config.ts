@@ -1,6 +1,6 @@
 import ngPreset from 'jest-preset-angular/presets';
 import { type JestConfigWithTsJest, pathsToModuleNameMapper } from 'ts-jest';
-
+import 'jest-preset-angular/setup-jest';
 import tsconfig from './tsconfig-esm.spec.json';
 
 const esmPreset = ngPreset.createEsmPreset();
