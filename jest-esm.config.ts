@@ -10,10 +10,9 @@ export default {
 	...esmPreset,
 	moduleNameMapper: {
 		...esmPreset.moduleNameMapper,
-		...pathsToModuleNameMapper(tsconfig.compilerOptions.paths, { prefix: '<rootDir>' }),
-		'^rxjs': '<rootDir>/node_modules/rxjs/dist/bundles/rxjs.umd.js',
-		'^@angular/core/testing': '<rootDir>/node_modules/@angular/core/fesm2022/testing.mjs',
-		//'^@angular/common$': '<rootDir>/node_modules/@angular/common/fesm2022/common.mjs',
+		...pathsToModuleNameMapper(
+			tsconfig.compilerOptions.paths, { prefix: '<rootDir>' }),
+		'^rxjs': '<rootDir>/node_modules/rxjs/dist/bundles/rxjs.umd.js'
 	},
 	setupFilesAfterEnv: ['<rootDir>/setup-jest-esm.ts'],
 	transform: {
