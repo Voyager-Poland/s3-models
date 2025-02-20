@@ -10,22 +10,22 @@
     ],
     "paths": {
       "@services/*": [
-        "src/services/*",
-        "src/services/context/*",
-        "src/services/stores/*",
-        "src/services/common/*"
+        "src/lib/services/*",
+        "src/lib/context/*",
+        "src/lib/stores/*",
+        "src/lib/common/*"
       ],
       "@models/*": [
-        "src/models/*"
+        "src/lib/models/*"
       ],
       "@interfaces/*": [
-        "src/interfaces/*"
+        "src/lib/interfaces/*"
       ],
       "@abstract/*": [
-        "src/abstract/*"
+        "src/lib/abstract/*"
       ],
       "@tokens/*": [
-        "src/tokens/*"
+        "src/lib/tokens/*"
       ]
     }
   },
