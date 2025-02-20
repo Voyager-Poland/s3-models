@@ -48,3 +48,7 @@ export { ClientModule } from './services/common/client.module';
 
 // Exporting tokens
 export { CLIENT_INFO_TOKEN } from './tokens/tokens';
+
+//Experyment
+export { HelloWorld } from './services/common/hello-world';
+export { HelloWorldModule } from './services/common/hello-world.module';

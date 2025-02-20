@@ -4,10 +4,11 @@ import { ClientCallbackService } from "./client-callback.service";
 import { ClientInfoService } from "./client-info.service";
 import { CLIENT_INFO_TOKEN } from "../../tokens/tokens";
 import { ClientInfo } from "../../interfaces/client-info";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
 	declarations: [ClientCallbackService],
-	imports: [NgModule],
+	imports: [CommonModule],
 	providers: [
 		{ provide: ClientCallbackService, useFactory: (client: ClientInfo) => new ClientCallbackService(client), deps: [CLIENT_INFO_TOKEN] },
 		{
