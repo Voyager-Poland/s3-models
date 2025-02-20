@@ -21,7 +21,7 @@ export { ClientInfoService } from './services/common/client-info.service';
 export { ProfileEventBusService } from './services/context/profile-bus.service';
 export { LanguageEventBusService } from './services/context/language-bus.service';
 export { CurrencyEventBusService } from './services/context/currency-bus.service';
-export { ProfileEventEmitter } from './services/context/profile-event-emiter';
+export { ProfileEventEmitter } from './services/context/profile-event-emitter';
 export { ProfileEventReader } from './services/context/profile-event-reader';
 export { CurrencyEventEmitter } from './services/context/currency-event-emitter';
 export { CurrencyEventReader } from './services/context/currency-event-reader';
@@ -45,3 +45,6 @@ export { EventBus } from './abstract/event-bus';
 
 // Exporting modules
 export { ClientModule } from './services/common/client.module';
+
+// Exporting tokens
+export { CLIENT_INFO_TOKEN } from './tokens/tokens';

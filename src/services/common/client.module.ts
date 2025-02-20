@@ -6,16 +6,16 @@ import { CLIENT_INFO_TOKEN } from "../../tokens/tokens";
 import { ClientInfo } from "../../interfaces/client-info";
 
 @NgModule({
-  providers: [
-    { provide: ClientCallbackService, useFactory: (client: ClientInfo ) => new ClientCallbackService(client), deps: [CLIENT_INFO_TOKEN] },
-    {
-      provide: CLIENT_INFO_TOKEN,
-      useFactory: () => {
-        const platform = inject(PLATFORM_ID);
-        return new ClientInfoService(platform);
-      },
-      deps: [PLATFORM_ID],
-    },
-  ],
+	providers: [
+		{ provide: ClientCallbackService, useFactory: (client: ClientInfo) => new ClientCallbackService(client), deps: [CLIENT_INFO_TOKEN] },
+		{
+			provide: CLIENT_INFO_TOKEN,
+			useFactory: () => {
+				const platform = inject(PLATFORM_ID);
+				return new ClientInfoService(platform);
+			},
+			deps: [PLATFORM_ID],
+		},
+	],
 })
-export class ClientModule {}
+export class ClientModule { }

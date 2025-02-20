@@ -1,4 +1,4 @@
-import { ProfileEventEmitter } from "./context/profile-event-emiter";
+import { ProfileEventEmitter } from "./context/profile-event-emitter";
 
 export class ProfileTokenValue {
 	constructor(private emitter: ProfileEventEmitter) { }
