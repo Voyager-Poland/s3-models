@@ -1,15 +1,36 @@
 {
-	"extends": "./tsconfig.json",
-	"compilerOptions": {
-		"outDir": "./out-tsc/spec",
-		"module": "CommonJS",
-		"types": [
-			"jest", "node"
-			
-		]
-	},
-	"include": [
-		"src/**/*.spec.ts",
-		"src/**/*.d.ts"
-	]
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./out-tsc/spec",
+    "module": "CommonJS",
+    "types": [
+      "jest",
+      "node"
+    ],
+    "paths": {
+      "@services/*": [
+        "src/services/*",
+        "src/services/context/*",
+        "src/services/stores/*",
+        "src/services/common/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@abstract/*": [
+        "src/abstract/*"
+      ],
+      "@tokens/*": [
+        "src/tokens/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
 }

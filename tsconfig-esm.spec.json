@@ -1,14 +1,35 @@
 {
-	"extends": "./tsconfig.json",
-	"compilerOptions": {
-		"esModuleInterop": true,
-		"module": "ES2022",
-		"types": [
-			"jest"
-		]
-	},
-	"include": [
-		"src/**/*.spec.ts",
-		"src/**/*.d.ts"
-	]
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "module": "ES2022",
+    "types": [
+      "jest"
+    ],
+    "paths": {
+      "@services/*": [
+        "src/services/*",
+        "src/services/context/*",
+        "src/services/stores/*",
+        "src/services/common/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@abstract/*": [
+        "src/abstract/*"
+      ],
+      "@tokens/*": [
+        "src/tokens/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
 }

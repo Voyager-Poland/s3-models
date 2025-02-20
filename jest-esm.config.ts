@@ -1,11 +1,12 @@
 import ngPreset from 'jest-preset-angular/presets';
 import { type JestConfigWithTsJest, pathsToModuleNameMapper } from 'ts-jest';
 
-import tsconfig from './tsconfig.json';
+import tsconfig from './tsconfig-esm.spec.json';
 
 const esmPreset = ngPreset.createEsmPreset();
 
 export default {
+    bail: true,
     ...esmPreset,
     moduleNameMapper: {
         ...esmPreset.moduleNameMapper,

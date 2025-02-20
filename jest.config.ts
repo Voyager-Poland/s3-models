@@ -1,9 +1,10 @@
 import presets from 'jest-preset-angular/presets';
 import { type JestConfigWithTsJest, pathsToModuleNameMapper } from 'ts-jest';
 
-import { compilerOptions } from './tsconfig.json';
+import { compilerOptions } from './tsconfig.spec.json';
 
 export default {
+	bail: true,
 	...presets.createCjsPreset(),
 	moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>' }),
 	setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],

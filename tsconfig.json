@@ -1,52 +1,26 @@
 {
-	"compilerOptions": {
-		"baseUrl": "./",
-		"target": "ES2022",
-		"module": "ES2022",
-		"outDir": "./dist",
-		"strict": true,
-		"esModuleInterop": true,
-		"noImplicitReturns": true,
-		"noImplicitAny": true,
-		"declaration": true,
-		"declarationDir": "./dist/types",
-		"sourceMap": true,
-		"moduleResolution": "node",
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
-		"experimentalDecorators": true,
-		"resolveJsonModule": true,
-		"paths": {
-			"@services/*": [
-				"src/services/*",
-				"src/services/context/*",
-				"src/services/stores/*",
-				"src/services/common/*"
-			],
-			"@models/*": [
-				"src/models/*"
-			],
-			"@interfaces/*": [
-				"src/interfaces/*"
-			],
-			"@abstract/*": [
-				"src/abstract/*"
-			],
-			"@tokens/*": [
-				"src/tokens/*"
-			]
-		}
-	},
-	"angularCompilerOptions": {
-		"enableI18nLegacyMessageIdFormat": false,
-		"strictInjectionParameters": true,
-		"strictInputAccessModifiers": true,
-		"strictTemplates": true
-	},
-	"include": [
-		"src/**/*.ts",
-		"src/**/*.tsx",
-		"tests/**/*.ts",
-		"tests/**/*.tsx"
-	]
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "ES2022",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts", "tests/**/*.tsx"]
 }
