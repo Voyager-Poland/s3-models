@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { ClientModule } from './client.module';
 import { ClientCallbackService } from './client-callback.service';
 import { ClientInfoService } from './client-info.service';
-import { CLIENT_INFO_TOKEN } from '../tokens';
+import { CLIENT_INFO_TOKEN } from '../tokens/tokens';
 
 describe('ClientModule', () => {
   beforeEach(() => {

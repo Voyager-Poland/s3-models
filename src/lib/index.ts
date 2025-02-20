@@ -47,7 +47,7 @@ export { EventBus } from './abstract/event-bus';
 export { ClientModule } from './common/client.module';
 
 // Exporting tokens
-export { CLIENT_INFO_TOKEN } from './tokens';
+export { CLIENT_INFO_TOKEN } from './tokens/tokens';
 
 //Experyment
 export { HelloWorldService } from './dump/hello-world.service';
