@@ -1,0 +1,55 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250220183002
+Username: VOYAGER\andrzejs
+RunAs User: VOYAGER\andrzejs
+Configuration Name: 
+Machine: LAP-ANDRZEJS2 (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\andrzejs\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 34368
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\m3\s3-models\script-output.txt
+File not found: C:\m3\s3-models\src\services\common\client-callback.service.ts
+File not found: C:\m3\s3-models\src\services\common\client-callback.service.spec.ts
+File not found: C:\m3\s3-models\src\services\common\client-info.service.ts
+File not found: C:\m3\s3-models\src\services\common\client-info.service.spec.ts
+File not found: C:\m3\s3-models\src\services\common\client.module.ts
+File not found: C:\m3\s3-models\src\services\common\client.module.spec.ts
+File not found: C:\m3\s3-models\src\services\context\currency-bus.service.ts
+File not found: C:\m3\s3-models\src\services\context\currency-event-emitter.ts
+File not found: C:\m3\s3-models\src\services\context\currency-event-reader.ts
+File not found: C:\m3\s3-models\src\services\context\language-bus.service.ts
+File not found: C:\m3\s3-models\src\services\context\language-event-emitter.ts
+File not found: C:\m3\s3-models\src\services\context\language-event-reader.ts
+File not found: C:\m3\s3-models\src\services\context\language-translation.service.ts
+File not found: C:\m3\s3-models\src\services\context\language-translation.service.spec.ts
+File not found: C:\m3\s3-models\src\services\context\profile-bus.service.ts
+File not found: C:\m3\s3-models\src\services\context\profile-bus.service.spec.ts
+File not found: C:\m3\s3-models\src\services\context\profile-event-emitter.ts
+File not found: C:\m3\s3-models\src\services\context\profile-event-reader.ts
+File not found: C:\m3\s3-models\src\services\context\profile.service.ts
+File not found: C:\m3\s3-models\src\services\stores\cookie-store.ts
+File not found: C:\m3\s3-models\src\services\stores\cookie-store.spec.ts
+File not found: C:\m3\s3-models\src\services\stores\initiall-state.service.ts
+File not found: C:\m3\s3-models\src\services\stores\initial-state.service.spec.ts
+File not found: C:\m3\s3-models\src\services\stores\options-processor.ts
+File not found: C:\m3\s3-models\src\services\stores\options-processor.spec.ts
+File not found: C:\m3\s3-models\src\services\stores\profile-cookie-store.ts
+File not found: C:\m3\s3-models\src\services\stores\profile-cookie-store.spec.ts
+File not found: C:\m3\s3-models\src\services\stores\profile-ssr-store.ts
+File not found: C:\m3\s3-models\src\services\stores\ssr-store.ts
+File not found: C:\m3\s3-models\src\services\stores\state-comparison.service.ts
+File not found: C:\m3\s3-models\src\services\stores\state-comparison.service.spec.ts
+Files moved successfully according to APF structure.
+**********************
+Windows PowerShell transcript end
+End time: 20250220183002
+**********************
