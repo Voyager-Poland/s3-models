@@ -2,6 +2,7 @@
 	"name": "s3-models",
 	"version": "3.0.0",
 	"description": "Models, Interfaces, Enums for Voyager S3",
+	"main": "dist/bundles/s3-models.umd.js",
 	"module": "dist/fesm2022/s3-models.mjs",
 	"es2022": "dist/fesm2022/s3-models.mjs",
 	"typings": "dist/types/index.d.ts",
@@ -38,5 +39,13 @@
 		"@angular/platform-browser": "^19.0.0",
 		"@angular/platform-browser-dynamic": "^19.0.0",
 		"rxjs": "^7.8.1"
+	},
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/fesm2022/s3-models.mjs",
+			"require": "./dist/bundles/s3-models.umd.js"
+		}
 	}
 }
