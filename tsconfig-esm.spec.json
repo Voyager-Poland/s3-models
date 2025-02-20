@@ -3,16 +3,17 @@
   "compilerOptions": {
     "baseUrl": "./",
     "esModuleInterop": true,
-    "module": "ES2022",
+    "target": "ES2020",
+    "module": "ESNext",
     "types": [
       "jest"
     ],
     "paths": {
+      "src/*": [
+        "src/*"
+      ],
       "@services/*": [
-        "src/services/*",
-        "src/services/context/*",
-        "src/services/stores/*",
-        "src/services/common/*"
+        "src/services/*"
       ],
       "@models/*": [
         "src/models/*"
