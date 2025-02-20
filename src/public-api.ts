@@ -38,6 +38,7 @@ export { ProfileSSRStore } from './lib/stores/profile-ssr-store';
 export { OptionsProcessor } from './lib/stores/options-processor';
 export { ProfileTokenCookieStore } from './lib/stores/profile-cookie-store';
 export { IntialStateService } from './lib/stores/initial-state.service';
+
 export { StateComparisonService } from './lib/stores/state-comparison.service';
 
 // Exporting abstract classes
@@ -49,6 +50,6 @@ export { ClientModule } from './lib/common/client.module';
 // Exporting tokens
 export { CLIENT_INFO_TOKEN } from './lib/tokens/tokens';
 
-//Experyment
+// Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';
 export { HelloWorldModule } from './lib/dump/hello-world.module';
