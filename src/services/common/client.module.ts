@@ -7,7 +7,6 @@ import { ClientInfo } from "../../interfaces/client-info";
 import { CommonModule } from "@angular/common";
 
 @NgModule({
-	declarations: [ClientCallbackService],
 	imports: [CommonModule],
 	providers: [
 		{ provide: ClientCallbackService, useFactory: (client: ClientInfo) => new ClientCallbackService(client), deps: [CLIENT_INFO_TOKEN] },
@@ -19,8 +18,7 @@ import { CommonModule } from "@angular/common";
 			},
 			deps: [PLATFORM_ID],
 		},
-	],
-	exports: [ClientCallbackService]
+	]
 })
 export class ClientModule { }
 
