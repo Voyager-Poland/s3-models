@@ -1,13 +1,13 @@
 {
-    "dest": "dist",
-    "lib": {
-        "entryFile": "src/public-api.ts"
-    },
-    "allowedNonPeerDependencies": [
-        "@angular/common",
-        "@angular/core",
-        "@angular/platform-browser",
-        "@angular/platform-browser-dynamic",
-        "rxjs"
-    ]
+  "dest": "dist",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "@angular/common",
+    "@angular/core",
+    "@angular/platform-browser",
+    "@angular/platform-browser-dynamic",
+    "rxjs"
+  ]
 }
