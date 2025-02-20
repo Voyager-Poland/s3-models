@@ -1,15 +1,15 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { HelloWorld } from "./hello-world";
+import { HelloWorldService } from "./hello-world.service";
 import { CommonModule } from "@angular/common";
 
 
 
 @NgModule({
-	declarations: [HelloWorld],
+	declarations: [HelloWorldService],
 	imports: [CommonModule],
-	providers: [HelloWorld],
-	exports: [HelloWorld]
+	providers: [HelloWorldService],
+	exports: [HelloWorldService]
 })
 export class HelloWorldModule {
 }

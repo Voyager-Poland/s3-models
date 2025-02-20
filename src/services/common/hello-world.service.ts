@@ -1,6 +1,6 @@
 
 
-export class HelloWorld {
+export class HelloWorldService {
 	constructor() {
 		console.log('Hello World');
 	}

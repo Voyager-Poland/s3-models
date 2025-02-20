@@ -50,5 +50,5 @@ export { ClientModule } from './services/common/client.module';
 export { CLIENT_INFO_TOKEN } from './tokens/tokens';
 
 //Experyment
-export { HelloWorld } from './services/common/hello-world';
+export { HelloWorldService } from './services/common/hello-world.service';
 export { HelloWorldModule } from './services/common/hello-world.module';
