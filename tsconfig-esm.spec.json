@@ -1,37 +1,22 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": "./",
-    "esModuleInterop": true,
-    "target": "ES2020",
-    "module": "ESNext",
-    "types": [
-      "jest",
-      "node"
-    ],
-    "paths": {
-      "src/*": [
-        "src/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ],
-      "@models/*": [
-        "src/models/*"
-      ],
-      "@interfaces/*": [
-        "src/interfaces/*"
-      ],
-      "@abstract/*": [
-        "src/abstract/*"
-      ],
-      "@tokens/*": [
-        "src/tokens/*"
-      ]
-    }
-  },
-  "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
-  ]
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "./",
+		"esModuleInterop": true,
+		"target": "ES2020",
+		"module": "ESNext",
+		"types": [
+			"jest",
+			"node"
+		],
+		"paths": {
+			"src/*": [
+				"src/*"
+			]
+		}
+	},
+	"include": [
+		"src/**/*.spec.ts",
+		"src/**/*.d.ts"
+	]
 }
