@@ -2,12 +2,6 @@
 	"name": "s3-models",
 	"version": "3.0.0",
 	"description": "Models, Interfaces, Enums for Voyager S3",
-	"main": "dist/bundles/s3-models.umd.js",
-	"module": "dist/fesm2022/s3-models.mjs",
-	"es2022": "dist/fesm2022/s3-models.mjs",
-	"default": "dist/fesm2022/s3-models.mjs",
-	"typings": "dist/index.d.ts",
-	"sideEffects": false,
 	"scripts": {
 		"build": "ng-packagr -p ng-package.json",
 		"test": "jest",
