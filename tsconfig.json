@@ -6,10 +6,12 @@
 		"noImplicitReturns": true,
 		"noImplicitAny": true,
 		"declaration": true,
-		"declarationDir": "./dist/types",
 		"sourceMap": true,
 		"moduleResolution": "node",
 		"skipLibCheck": true,
+		"typeRoots": [
+			"node_modules/@types"
+		],
 		"forceConsistentCasingInFileNames": true,
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
@@ -22,18 +24,12 @@
 		"strictInjectionParameters": true,
 		"strictInputAccessModifiers": true,
 		"strictTemplates": true,
-		"enableIvy": true 
+		"enableIvy": true
 	},
 	"include": [
 		"src/**/*.ts",
 		"src/**/*.tsx",
 		"tests/**/*.ts",
 		"tests/**/*.tsx"
-	],
-	"exclude": [
-		"node_modules",
-		"dist",
-		".angular",
-		".vscode"
 	]
 }
