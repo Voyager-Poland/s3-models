@@ -1,6 +1,6 @@
 {
 	"name": "s3-models",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "Models, Interfaces, Enums for Voyager S3",
 	"scripts": {
 		"build": "ng-packagr -p ng-package.json",
@@ -29,10 +29,10 @@
 		"typescript": "^5.0.0"
 	},
 	"peerDependencies": {
-		"@angular/common": "^19.0.0",
-		"@angular/core": "^19.0.0",
-		"@angular/platform-browser": "^19.0.0",
-		"@angular/platform-browser-dynamic": "^19.0.0",
+		"@angular/common": "^18.2.0 || ^19.0.0",
+		"@angular/core": "^18.2.0 || ^19.0.0",
+		"@angular/platform-browser": "^18.2.0 || ^19.0.0",
+		"@angular/platform-browser-dynamic": "^18.2.0 || ^19.0.0",
 		"rxjs": "^7.8.1"
 	}
 }
