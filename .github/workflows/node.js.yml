@@ -58,11 +58,8 @@ jobs:
       - name: Build the package
         run: npm run build
 
-      - name: Copy package.json from dist to root
-        run: cp ./dist/package.json ./package.json
-
-      - name: diagnostic-before-publish
-        run: cat ./package.json
+      - name: Change directory to dist
+        run: cd dist
 
       - name: Publish to npm
         run: npm publish --access public
