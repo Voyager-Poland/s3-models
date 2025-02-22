@@ -14,10 +14,6 @@
 	},
 	"author": "Andrzej Świstowski <andrzej.swistowski@voyager.pl>",
 	"license": "MIT",
-	"files": [
-		"dist",
-		"dist/package.json"
-	],
 	"devDependencies": {
 		"@angular-devkit/build-angular": "^19.0.0",
 		"@angular/cli": "^19.0.0",

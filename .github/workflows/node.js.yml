@@ -58,13 +58,13 @@ jobs:
       - name: Build the package
         run: npm run build
 
+      - name: Copy package.json from dist to root
+        run: cp ./dist/package.json ./package.json
+
       - name: diagnostic-before-publish
-        run: cat ./dist/package.json
+        run: cat ./package.json
 
       - name: Publish to npm
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: diagnostic-after-publish
-        run: cat ./dist/package.json
