@@ -50,6 +50,9 @@ export { ClientModule } from './lib/common/client.module';
 // Exporting tokens
 export { CLIENT_INFO_TOKEN } from './lib/tokens/tokens';
 
+// Modules
+export { ProfileEventModule } from './lib/context/profile-event.module';
+
 // Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';
 export { HelloWorldModule } from './lib/dump/hello-world.module';
