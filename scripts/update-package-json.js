@@ -7,17 +7,8 @@ const packageJson = require(packageJsonPath);
 const updatedPackageJson = {
   ...packageJson,
   files: [
-    "dist",
-    "dist/package.json",
-    "README.md",
-    "LICENSE"
-  ],
-  repository: {
-    type: "git",
-    url: "git+https://github.com/Voyager-Poland/s3-models.git"
-  },
-  author: "Andrzej Świstowski <andrzej.swistowski@voyager.pl>",
-  license: "MIT"
+    "dist"
+  ]
 };
 
 fs.writeFileSync(packageJsonPath, JSON.stringify(updatedPackageJson, null, 2));
