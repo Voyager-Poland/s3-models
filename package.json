@@ -1,6 +1,6 @@
 {
 	"name": "s3-models",
-	"version": "3.0.7",
+	"version": "3.0.8",
 	"description": "Models, Interfaces, Enums for Voyager S3",
 	"scripts": {
 		"build": "ng-packagr -p ng-package.json ",
