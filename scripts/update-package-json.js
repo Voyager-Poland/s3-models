@@ -1,38 +1,52 @@
 const fs = require('fs');
 const path = require('path');
+const { updatePackageJson } = require('./update-package-json-functions');
+const { moveDir, copyFiles } = require('./file-operations');
 
 const distPath = path.join(__dirname, '../dist');
 const packageJsonPath = path.join(distPath, 'package.json');
 const packageJson = require(packageJsonPath);
 
-// Update package.json
-const updatedPackageJson = {
-  ...packageJson,
-  files: [
-    "fesm2022",
-    "lib"
-  ]
-};
+console.log('Starting update-package-json script');
+console.log('distPath:', distPath);
+console.log('packageJsonPath:', packageJsonPath);
 
-// Write updated package.json
-fs.writeFileSync(packageJsonPath, JSON.stringify(updatedPackageJson, null, 2));
+// Update package.json
+updatePackageJson(packageJsonPath, packageJson);
+
+// Ensure directories exist before moving
+const fesm2022Src = path.join(distPath, 'fesm2022');
+const libSrc = path.join(distPath, 'lib');
+console.log('Checking if directories exist before moving:');
+console.log('fesm2022:', fs.existsSync(fesm2022Src));
+console.log('lib:', fs.existsSync(libSrc));
+
+// Log contents of dist directory
+console.log('Contents of dist directory before moving:');
+console.log(fs.readdirSync(distPath));
 
 // Move directories to root of dist
-const moveDir = (src, dest) => {
-  if (fs.existsSync(src)) {
-    fs.renameSync(src, dest);
-  }
-};
+moveDir(fesm2022Src, fesm2022Src);
+moveDir(libSrc, libSrc);
 
-moveDir(path.join(distPath, 'dist/fesm2022'), path.join(distPath, 'fesm2022'));
-moveDir(path.join(distPath, 'dist/lib'), path.join(distPath, 'lib'));
+// Ensure directories exist after moving
+console.log('Checking if directories exist after moving:');
+console.log('fesm2022:', fs.existsSync(fesm2022Src));
+console.log('lib:', fs.existsSync(libSrc));
+
+// Log contents of dist directory
+console.log('Contents of dist directory after moving:');
+console.log(fs.readdirSync(distPath));
 
 // Copy LICENSE, README.md, index.d.ts, and public-api.d.ts to dist
 const filesToCopy = ['LICENSE', 'README.md', 'index.d.ts', 'public-api.d.ts'];
 filesToCopy.forEach(file => {
-  const src = path.join(__dirname, '..', file);
-  const dest = path.join(distPath, file);
-  if (fs.existsSync(src)) {
-    fs.copyFileSync(src, dest);
+  const srcPath = path.join(__dirname, file);
+  if (fs.existsSync(srcPath)) {
+    copyFiles([file], __dirname, distPath);
+  } else {
+    console.warn(`File ${file} does not exist and will not be copied.`);
   }
 });
+
+console.log('Finished update-package-json script');
