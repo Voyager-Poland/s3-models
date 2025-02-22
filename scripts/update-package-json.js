@@ -26,3 +26,13 @@ const moveDir = (src, dest) => {
 
 moveDir(path.join(distPath, 'dist/fesm2022'), path.join(distPath, 'fesm2022'));
 moveDir(path.join(distPath, 'dist/lib'), path.join(distPath, 'lib'));
+
+// Copy LICENSE, README.md, index.d.ts, and public-api.d.ts to dist
+const filesToCopy = ['LICENSE', 'README.md', 'index.d.ts', 'public-api.d.ts'];
+filesToCopy.forEach(file => {
+  const src = path.join(__dirname, '..', file);
+  const dest = path.join(distPath, file);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, dest);
+  }
+});

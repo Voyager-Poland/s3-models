@@ -6,7 +6,9 @@
   },
   "assets": [
     "LICENSE",
-    "README.md"
+    "README.md",
+    "index.d.ts",
+    "public-api.d.ts"
   ],
   "deleteDestPath": true,
   "allowedNonPeerDependencies": [

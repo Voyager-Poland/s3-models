@@ -16,3 +16,5 @@ ng-package.json
 package*.json
 setup*.ts
 tsconfig*.json
+!LICENSE
+!README.md
