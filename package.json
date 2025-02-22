@@ -1,9 +1,9 @@
 {
 	"name": "s3-models",
-	"version": "3.0.13",
+	"version": "3.0.14",
 	"description": "Models, Interfaces, Enums for Voyager S3",
 	"scripts": {
-		"build": "ng-packagr -p ng-package.json ",
+		"build": "ng-packagr -p ng-package.json && node scripts/update-package-json.js",
 		"test": "jest",
 		"test-esm": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js -c=jest-esm.config.ts --no-cache",
 		"version": "npm version"
@@ -14,6 +14,12 @@
 	},
 	"author": "Andrzej Świstowski <andrzej.swistowski@voyager.pl>",
 	"license": "MIT",
+	"files": [
+		"dist",
+		"dist/package.json",
+		"README.md",
+		"LICENSE"
+	],
 	"devDependencies": {
 		"@angular-devkit/build-angular": "^19.0.0",
 		"@angular/cli": "^19.0.0",
