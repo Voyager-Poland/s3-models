@@ -13,3 +13,6 @@ src/**/*.spec.ts
 src/**/*.test.ts
 src/**/*.mock.ts
 ng-package.json
+package*.json
+setup*.ts
+tsconfig*.json
