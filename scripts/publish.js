@@ -10,6 +10,11 @@ if (!npmToken) {
   process.exit(1);
 }
 
+console.log('Copying package.json from dist to root');
+const packageJsonSrc = path.join(distPath, 'package.json');
+const packageJsonDest = path.join(__dirname, '..', 'package.json');
+fs.copyFileSync(packageJsonSrc, packageJsonDest);
+
 console.log('Moving contents of dist to root');
 fs.readdirSync(distPath).forEach(file => {
   const srcPath = path.join(distPath, file);
