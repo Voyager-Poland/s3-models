@@ -9,8 +9,8 @@ const packageJson = require(packageJsonPath);
 const updatedPackageJson = {
   ...packageJson,
   files: [
-    "dist/fesm2022",
-    "dist/lib"
+    "fesm2022",
+    "lib"
   ]
 };
 
