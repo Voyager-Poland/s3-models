@@ -25,19 +25,6 @@ const updatedPackageJson = {
 fs.writeFileSync(packageJsonPath, JSON.stringify(updatedPackageJson, null, 2));
 console.log('package.json updated successfully');
 
-// Move directories to root of dist
-const moveDir = (src, dest) => {
-  if (fs.existsSync(src)) {
-    fs.renameSync(src, dest);
-    console.log(`Moved directory from ${src} to ${dest}`);
-  } else {
-    console.log(`Source directory ${src} does not exist`);
-  }
-};
-
-moveDir(path.join(distPath, 'dist/fesm2022'), path.join(distPath, 'fesm2022'));
-moveDir(path.join(distPath, 'dist/lib'), path.join(distPath, 'lib'));
-
 // Copy LICENSE, README.md, index.d.ts, and public-api.d.ts to dist
 const filesToCopy = ['LICENSE', 'README.md', 'index.d.ts', 'public-api.d.ts'];
 filesToCopy.forEach(file => {
@@ -52,3 +39,4 @@ filesToCopy.forEach(file => {
 });
 
 console.log('Finished update-package-json script');
+

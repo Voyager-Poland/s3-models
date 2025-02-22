@@ -58,10 +58,7 @@ jobs:
       - name: Build the package
         run: npm run build
 
-      - name: Change directory to dist
-        run: cd dist
-
       - name: Publish to npm
-        run: npm publish --access public
+        run: npm run publish-package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
