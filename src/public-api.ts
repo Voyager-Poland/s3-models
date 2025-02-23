@@ -1,3 +1,5 @@
+import { ProfileStoreModule } from './lib/modules/profile-store.module';
+
 // Exporting models
 export { ProfileTokenModel } from './lib/models/profile.token.model';
 
@@ -11,9 +13,9 @@ export { CookieOptions } from './lib/interfaces/cookie-options';
 export { ClientInfo } from './lib/interfaces/client-info';
 
 // Exporting services
-export { StringEventBusService } from './lib/string-bus.service';
-export { StateSaverService } from './lib/state-saver.service';
-export { StateInitializerService } from './lib/state-initializer.service';
+export { StringEventBusService } from './lib/services/string-bus.service';
+export { StateSaverService } from './lib/services/state-saver.service';
+export { StateInitializerService } from './lib/services/state-initializer.service';
 export { ClientCallbackService } from './lib/common/client-callback.service';
 export { ClientInfoService } from './lib/common/client-info.service';
 
@@ -52,6 +54,7 @@ export { CLIENT_INFO_TOKEN } from './lib/tokens/tokens';
 
 // Modules
 export { ProfileEventModule } from './lib/context/profile-event.module';
+export { ProfileStoreModule } from './lib/modules/profile-store.module';
 
 // Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';

@@ -3,8 +3,8 @@ import { ClientInfo } from "../interfaces/client-info";
 import { ProfileTokenModel } from "../models/profile.token.model";
 import { Store } from "../interfaces/store";
 import { InitialStateProvider } from "../interfaces/internal-state.provider";
-import { StateSaverService } from "../state-saver.service";
-import { StateInitializerService } from "../state-initializer.service";
+import { StateSaverService } from "../services/state-saver.service";
+import { StateInitializerService } from "../services/state-initializer.service";
 import { StateComparisonService } from "../stores/state-comparison.service";
 
 export const CLIENT_INFO_TOKEN = new InjectionToken<ClientInfo>('ClientInfo');

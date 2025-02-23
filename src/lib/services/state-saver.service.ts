@@ -1,6 +1,6 @@
-import { EventReader } from './interfaces/event-reader';
+import { EventReader } from '../interfaces/event-reader';
 import { Subscription } from 'rxjs';
-import { Store } from './interfaces/store';
+import { Store } from '../interfaces/store';
 
 export class StateSaverService<T> {
 	private subscription: Subscription | undefined;
