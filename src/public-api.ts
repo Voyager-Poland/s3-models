@@ -1,4 +1,4 @@
-import { ProfileStoreModule } from './lib/modules/profile-store.module';
+import { ProfileStoreModule } from './lib/context/profile-store.module';
 
 // Exporting models
 export { ProfileTokenModel } from './lib/models/profile.token.model';
@@ -54,7 +54,7 @@ export { CLIENT_INFO_TOKEN } from './lib/tokens/tokens';
 
 // Modules
 export { ProfileEventModule } from './lib/context/profile-event.module';
-export { ProfileStoreModule } from './lib/modules/profile-store.module';
+export { ProfileStoreModule } from './lib/context/profile-store.module';
 
 // Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';
