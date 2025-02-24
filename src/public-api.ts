@@ -1,4 +1,4 @@
-import { ProfileStoreModule } from './lib/context/profile-store.module';
+import { ProfileStoreModule } from './lib/stores/profile-store.module';
 
 // Exporting models
 export { ProfileTokenModel } from './lib/models/profile.token.model';
@@ -41,7 +41,7 @@ export { OptionsProcessor } from './lib/stores/options-processor';
 export { ProfileTokenCookieStore } from './lib/stores/profile-cookie-store';
 export { IntialStateService } from './lib/stores/initial-state.service';
 
-export { StateComparisonService } from './lib/stores/state-comparison.service';
+export { StateComparisonService, StateComparisonStructure } from './lib/stores/state-comparison.service';
 
 // Exporting abstract classes
 export { EventBus } from './lib/abstract/event-bus';
@@ -54,7 +54,7 @@ export { CLIENT_INFO_TOKEN } from './lib/tokens/tokens';
 
 // Modules
 export { ProfileEventModule } from './lib/context/profile-event.module';
-export { ProfileStoreModule } from './lib/context/profile-store.module';
+export { ProfileStoreModule } from './lib/stores/profile-store.module';
 
 // Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';

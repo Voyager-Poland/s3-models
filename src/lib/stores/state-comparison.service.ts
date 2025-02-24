@@ -1,7 +1,13 @@
 import { InitialStateProvider } from "../interfaces/internal-state.provider";
 import { EventEmitter } from "../interfaces/event-emitter";
 
-export class StateComparisonService<T> {
+export class StateComparisonStructure<T> {
+	start(): void {
+	}
+	stop(): void {
+	}
+}
+export class StateComparisonService<T> extends StateComparisonStructure<T> {
 	private intervalId: NodeJS.Timeout | null = null;
 
 	constructor(
@@ -9,13 +15,14 @@ export class StateComparisonService<T> {
 		private eventEmitter: EventEmitter<T>,
 		private interval: number = 1000 // Default interval of 1 second
 	) {
+		super();
 	}
 
-	start(): void {
+	override start(): void {
 		this.intervalId = setInterval(() => this.checkForChanges(), this.interval);
 	}
 
-	stop(): void {
+	override stop(): void {
 		if (this.intervalId) {
 			clearInterval(this.intervalId);
 			this.intervalId = null;
