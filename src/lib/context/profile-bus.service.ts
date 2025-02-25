@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
  * 
  * Extends the EventBus class to handle events of type ProfileTokenModel.
  */
-Injectable(
+@Injectable(
 	{
 		providedIn: 'root'
 	}

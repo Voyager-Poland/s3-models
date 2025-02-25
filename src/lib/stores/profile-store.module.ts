@@ -1,4 +1,4 @@
-import { inject, Inject, NgModule, ModuleWithProviders } from '@angular/core';
+import { inject, NgModule, ModuleWithProviders } from '@angular/core';
 import { ProfileTokenCookieStore } from './profile-cookie-store';
 import { ProfileSSRStore } from './profile-ssr-store';
 import { PROFILE_INITIAL_STATE_PROVIDER_TOKEN, PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN, PROFILE_STATE_SAVER_TOKEN, PROFILE_STORE } from '../tokens/tokens';
