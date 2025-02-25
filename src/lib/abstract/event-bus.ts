@@ -1,6 +1,7 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 import { EventEmitter } from '../interfaces/event-emitter';
 import { EventReader } from '../interfaces/event-reader';
+import { generateRandomString } from '../utils/string-utils';
 
 /**
  * Abstract class EventBus<T>
@@ -14,6 +15,9 @@ export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
 	private eventSubject: BehaviorSubject<T>;
 	private _event$: Observable<T>;
 
+	/**
+	 @obsolete - delete this after testing
+	 */
 	randomBytes: string;
 	/**
 	 * Constructor
@@ -25,7 +29,7 @@ export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
 	protected constructor(initialValue: T) {
 		this.eventSubject = new BehaviorSubject<T>(initialValue);
 		this._event$ = this.eventSubject.asObservable();
-		this.randomBytes = this.generateRandomString(16);
+		this.randomBytes = generateRandomString(16);
 	}
 
 	/**
@@ -55,15 +59,5 @@ export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
 	 */
 	public get getCurrentValue(): T {
 		return this.eventSubject.getValue();
-	}
-
-	private generateRandomString(length: number): string {
-		const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-		let result = '';
-		const charactersLength = characters.length;
-		for (let i = 0; i < length; i++) {
-			result += characters.charAt(Math.floor(Math.random() * charactersLength));
-		}
-		return result;
 	}
 }

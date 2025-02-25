@@ -4,8 +4,6 @@ import { ProfileStoreModule } from '../stores/profile-store.module';
 import { PROFILE_STATE_INITIALIZER_TOKEN, PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_SAVER_TOKEN } from '../tokens/tokens';
 import { LoginService } from './login.service';
 
-
-
 @NgModule({
 	imports: [ProfileStoreModule],
 	providers: [
