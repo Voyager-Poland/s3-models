@@ -13,12 +13,11 @@ export function createProfileEventEmitter(service: ProfileEventBusService): Prof
 
 @NgModule({
 	providers: [
-		{ provide: ProfileEventBusService, useClass: ProfileEventBusService, multi: false },
+		ProfileEventBusService,
 		{
 			provide: ProfileEventReader,
 			useFactory: createProfileEventReader,
 			deps: [ProfileEventBusService],
-
 		},
 		{
 			provide: ProfileEventEmitter,
@@ -27,4 +26,23 @@ export function createProfileEventEmitter(service: ProfileEventBusService): Prof
 		}
 	]
 })
-export class ProfileEventModule { }
+export class ProfileEventModule {
+	static forRoot() {
+		return {
+			ngModule: ProfileEventModule,
+			providers: [
+				ProfileEventBusService,
+				{
+					provide: ProfileEventReader,
+					useFactory: createProfileEventReader,
+					deps: [ProfileEventBusService],
+				},
+				{
+					provide: ProfileEventEmitter,
+					useFactory: createProfileEventEmitter,
+					deps: [ProfileEventBusService],
+				}
+			]
+		};
+	}
+}
