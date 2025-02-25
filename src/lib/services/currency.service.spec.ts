@@ -5,6 +5,8 @@ import { StateSaverService } from './state-saver.service';
 import { StateComparisonStructure } from '../stores/state-comparison.service';
 import { CurrencyEventBusService } from '../context/currency-bus.service';
 import { jest } from '@jest/globals';
+import { IntialStateService } from '../stores/initial-state.service';
+import { SSRStore } from '../stores/ssr-store';
 
 describe('CurrencyService', () => {
 	let currencyService: CurrencyService;
@@ -13,11 +15,12 @@ describe('CurrencyService', () => {
 	let emitter: CurrencyEventEmitter;
 	let stateComparer: StateComparisonStructure<string>;
 	let currncyEvent: CurrencyEventBusService;
+	let store: SSRStore<string>;
 	beforeEach(() => {
 		currncyEvent = new CurrencyEventBusService();
-
-		stateInitializer = new StateInitializerService<string>({} as any, {} as any);
-		stateSaver = new StateSaverService<string>({} as any, {} as any);
+		store = new SSRStore<string>();
+		stateInitializer = new StateInitializerService<string>(new IntialStateService<string>(store), currncyEvent);
+		stateSaver = new StateSaverService<string>(store, currncyEvent);
 		emitter = new CurrencyEventEmitter(currncyEvent)
 		stateComparer = new StateComparisonStructure<string>();
 
