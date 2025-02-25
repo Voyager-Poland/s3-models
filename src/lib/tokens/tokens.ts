@@ -25,3 +25,5 @@ export const LANGUAGE_STORE = new InjectionToken<Store<string>>('LanguageStore')
 
 export const LANGUAGE_INITIAL_STATE_PROVIDER_TOKEN = new InjectionToken<InitialStateProvider<string>>('LanguageInitialStateProvider<string>');
 export const LANGUAGE_STATE_SAVER_TOKEN = new InjectionToken<StateSaverService<string>>('LanguageStateSaver<string>');
+export const LANGUAGE_STATE_INITIALIZER_TOKEN = new InjectionToken<StateInitializerService<string>>('LanguageStateInitializerService');
+export const LANGUAGE_STATE_COMPARSION_TOKEN = new InjectionToken<StateComparisonStructure<string>>('LanguageStateComparer');

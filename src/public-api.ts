@@ -56,10 +56,11 @@ export {
   PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN,
   PROFILE_STATE_SAVER_TOKEN, CURRENCY_INITIAL_STATE_PROVIDER_TOKEN,
   CURRENCY_STORE, CURRENCY_STATE_COMPARSION_TOKEN,
-  CURRENCY_STATE_INITIALIZER_TOKEN, CURRENCY_STATE_SAVER_TOKEN
-
+  CURRENCY_STATE_INITIALIZER_TOKEN, CURRENCY_STATE_SAVER_TOKEN,
+  LANGUAGE_INITIAL_STATE_PROVIDER_TOKEN, LANGUAGE_STORE,
+  LANGUAGE_STATE_COMPARSION_TOKEN, LANGUAGE_STATE_INITIALIZER_TOKEN,
+  LANGUAGE_STATE_SAVER_TOKEN
 } from './lib/tokens/tokens';
-
 
 // Modules
 export { ProfileEventModule } from './lib/context/profile-event.module';
@@ -67,6 +68,7 @@ export { ProfileStoreModule } from './lib/stores/profile-store.module';
 export { CurrencyStoreModule } from './lib/stores/currency-store.module';
 export { CurrencyEventModule } from './lib/context/currency-event.module';
 export { LanguageEventModule } from './lib/context/language-event.module';
+export { LanguageStoreModule } from './lib/stores/language-store.module';
 
 // Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';
