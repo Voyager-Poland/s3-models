@@ -5,6 +5,7 @@ import { ProfileTokenModel } from '../models/profile.token.model';
 import { StateInitializerService } from './state-initializer.service';
 import { StateSaverService } from './state-saver.service';
 import { StateComparisonStructure } from '../stores/state-comparison.service';
+import { inject } from '@angular/core';
 
 describe('LoginService', () => {
 	let service: LoginService;
@@ -31,7 +32,11 @@ describe('LoginService', () => {
 
 		TestBed.configureTestingModule({
 			providers: [
-				LoginService,
+				{
+					provide: LoginService, useFactory: () => new LoginService(inject(StateInitializerService), inject(StateSaverService), inject(ProfileEventEmitter),
+						inject(StateComparisonStructure)),
+					deps: [StateInitializerService, StateSaverService, ProfileEventEmitter, StateComparisonStructure]
+				},
 				{ provide: StateInitializerService, useValue: initializerSpy },
 				{ provide: StateSaverService, useValue: saverSpy },
 				{ provide: ProfileEventEmitter, useValue: emitter },
@@ -39,7 +44,7 @@ describe('LoginService', () => {
 			]
 		});
 
-		service = TestBed.inject(LoginService);
+		service = new LoginService(initializerSpy as any, saverSpy as any, emitter as any, comparerSpy as any);
 		stateInitializerSpy = TestBed.inject(StateInitializerService) as jest.Mocked<StateInitializerService<ProfileTokenModel>>;
 		stateSaverSpy = TestBed.inject(StateSaverService) as jest.Mocked<StateSaverService<ProfileTokenModel>>;
 		emitterSpy = TestBed.inject(ProfileEventEmitter) as jest.Mocked<ProfileEventEmitter>;
