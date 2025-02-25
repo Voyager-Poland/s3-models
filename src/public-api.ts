@@ -18,6 +18,7 @@ export { StateInitializerService } from './lib/services/state-initializer.servic
 export { ClientCallbackService } from './lib/common/client-callback.service';
 export { ClientInfoService } from './lib/common/client-info.service';
 export { CurrencyService } from './lib/services/currency.service';
+export { LanguageService } from './lib/services/language.service';
 
 // Exporting services/context
 export { ProfileEventBusService } from './lib/context/profile-bus.service';
