@@ -1,15 +1,27 @@
 import { BehaviorSubject, map, Observable, Subscription } from 'rxjs';
 import { Translation } from '../interfaces/translation';
 import { LanguageEventReader } from './language-event-reader';
+import { generateRandomString } from '../utils/string-utils';
+import { Inject, Injectable } from '@angular/core';
+import { TRANSLATION_TOKEN } from '../tokens/tokens';
 
+@Injectable({
+	providedIn: 'root',
+})
 export class LanguageTranslationService {
 	private languageSubject: BehaviorSubject<string>;
 	private subscription: Subscription;
 
+	/**
+	 * @obsolete - delete this after testing
+	 * */
+	checkIstance: string;
+
 	constructor(
 		private languageEventReader: LanguageEventReader,
-		private translation: Translation
+		@Inject(TRANSLATION_TOKEN) private translation: Translation
 	) {
+		this.checkIstance = generateRandomString(16);
 		this.languageSubject = new BehaviorSubject<string>("pl");
 		this.subscription = this.languageEventReader.event$.subscribe((language) => {
 			this.languageSubject.next(language);

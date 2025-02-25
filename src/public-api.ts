@@ -1,5 +1,3 @@
-import { ProfileStoreModule } from './lib/stores/profile-store.module';
-
 // Exporting models
 export { ProfileTokenModel } from './lib/models/profile.token.model';
 
@@ -60,7 +58,7 @@ export {
   CURRENCY_STATE_INITIALIZER_TOKEN, CURRENCY_STATE_SAVER_TOKEN,
   LANGUAGE_INITIAL_STATE_PROVIDER_TOKEN, LANGUAGE_STORE,
   LANGUAGE_STATE_COMPARSION_TOKEN, LANGUAGE_STATE_INITIALIZER_TOKEN,
-  LANGUAGE_STATE_SAVER_TOKEN
+  LANGUAGE_STATE_SAVER_TOKEN, TRANSLATION_TOKEN
 } from './lib/tokens/tokens';
 
 // Modules
