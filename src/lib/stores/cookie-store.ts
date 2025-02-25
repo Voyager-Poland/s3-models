@@ -24,7 +24,9 @@ export class CookieStore<T> implements Store<T> {
 
 	setValue(value: T): void {
 		const cookieValue = encodeURIComponent(this.serialize(value));
+		console.log('CookieStore: Setting cookie', cookieValue);
 		let cookieString = `${this.key}=${cookieValue}; path=/;` + this.optionsProcessor.value;
+		console.log('CookieStore: Setting cookie', cookieString);
 		document.cookie = cookieString;
 	}
 
