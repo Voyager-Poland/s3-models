@@ -1,6 +1,6 @@
 {
 	"name": "s3-models",
-	"version": "3.5.2",
+	"version": "3.6.0",
 	"description": "Models, Interfaces, Enums for Voyager S3",
 	"main": "dist/fesm2022/s3-models.mjs",
 	"types": "dist/index.d.ts",
