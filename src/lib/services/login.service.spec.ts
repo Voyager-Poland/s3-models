@@ -68,7 +68,7 @@ describe('LoginService', () => {
 	});
 
 	it('should stop services on destroy', () => {
-		service.ngOnDestroy();
+		service.destroy();
 		expect(stateComparerSpy.stop).toHaveBeenCalled();
 		expect(stateSaverSpy.destroy).toHaveBeenCalled();
 	});

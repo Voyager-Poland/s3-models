@@ -40,6 +40,7 @@ export { ProfileSSRStore } from './lib/stores/profile-ssr-store';
 export { OptionsProcessor } from './lib/stores/options-processor';
 export { ProfileTokenCookieStore } from './lib/stores/profile-cookie-store';
 export { IntialStateService } from './lib/stores/initial-state.service';
+export { LoginService } from './lib/services/login.service';
 
 export { StateComparisonService, StateComparisonStructure } from './lib/stores/state-comparison.service';
 
@@ -50,11 +51,16 @@ export { EventBus } from './lib/abstract/event-bus';
 export { ClientModule } from './lib/common/client.module';
 
 // Exporting tokens
-export { CLIENT_INFO_TOKEN } from './lib/tokens/tokens';
+export {
+    CLIENT_INFO_TOKEN, PROFILE_INITIAL_STATE_PROVIDER_TOKEN, PROFILE_STORE,
+    PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN
+} from './lib/tokens/tokens';
+
 
 // Modules
 export { ProfileEventModule } from './lib/context/profile-event.module';
 export { ProfileStoreModule } from './lib/stores/profile-store.module';
+export { LoginServiceModule } from './lib/services/LoginServiceModule'
 
 // Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';

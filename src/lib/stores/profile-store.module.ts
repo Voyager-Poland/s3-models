@@ -17,7 +17,7 @@ import { StateSaverService } from '../services/state-saver.service';
     providers: []
 })
 export class ProfileStoreModule {
-    static forRoot(key: string, cookieOptions: CookieOptions = {}, intervalValue: number | null = null): ModuleWithProviders<ProfileStoreModule> {
+    static forRoot(key: string | 'profile', cookieOptions: CookieOptions = {}, intervalValue: number | null = null): ModuleWithProviders<ProfileStoreModule> {
         const providers = [
             {
                 provide: PROFILE_STORE,
