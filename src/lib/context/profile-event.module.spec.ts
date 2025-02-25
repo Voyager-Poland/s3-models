@@ -7,7 +7,7 @@ import { ProfileEventEmitter } from './profile-event-emitter';
 describe('ProfileEventModule', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			imports: [ProfileEventModule]
+			imports: [ProfileEventModule.forRoot()]
 		});
 	});
 
