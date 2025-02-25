@@ -1,3 +1,5 @@
+import { ProfileStoreModule } from './lib/stores/profile-store.module';
+
 // Exporting models
 export { ProfileTokenModel } from './lib/models/profile.token.model';
 
@@ -8,12 +10,11 @@ export { EventReader } from './lib/interfaces/event-reader';
 export { InitialStateProvider } from './lib/interfaces/internal-state.provider';
 export { Store } from './lib/interfaces/store';
 export { CookieOptions } from './lib/interfaces/cookie-options';
-export { ClientInfo } from './lib/interfaces/client-info';
 
 // Exporting services
-export { StringEventBusService } from './lib/string-bus.service';
-export { StateSaverService } from './lib/state-saver.service';
-export { StateInitializerService } from './lib/state-initializer.service';
+export { StringEventBusService } from './lib/services/string-bus.service';
+export { StateSaverService } from './lib/services/state-saver.service';
+export { StateInitializerService } from './lib/services/state-initializer.service';
 export { ClientCallbackService } from './lib/common/client-callback.service';
 export { ClientInfoService } from './lib/common/client-info.service';
 
@@ -38,8 +39,9 @@ export { ProfileSSRStore } from './lib/stores/profile-ssr-store';
 export { OptionsProcessor } from './lib/stores/options-processor';
 export { ProfileTokenCookieStore } from './lib/stores/profile-cookie-store';
 export { IntialStateService } from './lib/stores/initial-state.service';
+export { LoginService } from './lib/services/login.service';
 
-export { StateComparisonService } from './lib/stores/state-comparison.service';
+export { StateComparisonService, StateComparisonStructure } from './lib/stores/state-comparison.service';
 
 // Exporting abstract classes
 export { EventBus } from './lib/abstract/event-bus';
@@ -48,10 +50,16 @@ export { EventBus } from './lib/abstract/event-bus';
 export { ClientModule } from './lib/common/client.module';
 
 // Exporting tokens
-export { CLIENT_INFO_TOKEN } from './lib/tokens/tokens';
+export {
+	PROFILE_INITIAL_STATE_PROVIDER_TOKEN, PROFILE_STORE,
+	PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN
+} from './lib/tokens/tokens';
+
 
 // Modules
 export { ProfileEventModule } from './lib/context/profile-event.module';
+export { ProfileStoreModule } from './lib/stores/profile-store.module';
+export { LoginServiceModule } from './lib/services/LoginServiceModule'
 
 // Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';
