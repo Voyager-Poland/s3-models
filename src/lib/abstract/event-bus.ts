@@ -48,7 +48,6 @@ export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
 	 * @param event - The event to emit.
 	 */
 	public emitEvent(event: T): void {
-		console.log('EventBus: Emitting event', event);
 		this.eventSubject.next(event);
 	}
 

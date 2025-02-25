@@ -6,8 +6,7 @@ describe('ProfileEventBusService', () => {
 
 	beforeEach(() => {
 		service = new ProfileEventBusService();
-		console.log('ProfileEventBusService service', service.randomBytes);
-	});
+		
 
 	it('should be created', () => {
 		expect(service).toBeTruthy();
