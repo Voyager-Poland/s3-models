@@ -1,0 +1,51 @@
+import { CurrencyService } from './currency.service';
+import { CurrencyEventEmitter } from '../context/currency-event-emitter';
+import { StateInitializerService } from './state-initializer.service';
+import { StateSaverService } from './state-saver.service';
+import { StateComparisonStructure } from '../stores/state-comparison.service';
+import { CurrencyEventBusService } from '../context/currency-bus.service';
+import { jest } from '@jest/globals';
+
+describe('CurrencyService', () => {
+	let currencyService: CurrencyService;
+	let stateInitializer: StateInitializerService<string>;
+	let stateSaver: StateSaverService<string>;
+	let emitter: CurrencyEventEmitter;
+	let stateComparer: StateComparisonStructure<string>;
+	let currncyEvent: CurrencyEventBusService;
+	beforeEach(() => {
+		currncyEvent = new CurrencyEventBusService();
+
+		stateInitializer = new StateInitializerService<string>({} as any, {} as any);
+		stateSaver = new StateSaverService<string>({} as any, {} as any);
+		emitter = new CurrencyEventEmitter(currncyEvent)
+		stateComparer = new StateComparisonStructure<string>();
+
+		jest.spyOn(stateInitializer, 'setState');
+		jest.spyOn(stateSaver, 'start');
+		jest.spyOn(stateSaver, 'destroy');
+		jest.spyOn(stateComparer, 'start');
+		jest.spyOn(stateComparer, 'stop');
+		jest.spyOn(emitter, 'emitEvent');
+
+		currencyService = new CurrencyService(stateInitializer, stateSaver, emitter, stateComparer);
+	});
+
+	it('should initialize services on creation', () => {
+		expect(stateInitializer.setState).toHaveBeenCalled();
+		expect(stateSaver.start).toHaveBeenCalled();
+		expect(stateComparer.start).toHaveBeenCalled();
+	});
+
+	it('should stop services on destroy', () => {
+		currencyService.destroy();
+		expect(stateComparer.stop).toHaveBeenCalled();
+		expect(stateSaver.destroy).toHaveBeenCalled();
+	});
+
+	it('should emit event on currency change', () => {
+		const currency = 'USD';
+		currencyService.onCurrencyChange(currency);
+		expect(emitter.emitEvent).toHaveBeenCalledWith(currency);
+	});
+});
