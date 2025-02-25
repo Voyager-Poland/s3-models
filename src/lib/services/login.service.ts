@@ -4,7 +4,6 @@ import { StateInitializerService } from './state-initializer.service';
 import { StateSaverService } from './state-saver.service';
 import { StateComparisonStructure } from '../stores/state-comparison.service';
 
-
 export class LoginService {
 	constructor(
 		private stateInitializer: StateInitializerService<ProfileTokenModel>,
@@ -29,5 +28,4 @@ export class LoginService {
 	onLogout() {
 		this.emitter.emitEvent(ProfileTokenModel.createEmpty());
 	}
-
 }
