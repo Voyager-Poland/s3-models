@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { EventBus } from '../abstract/event-bus';
 
 /**
@@ -5,6 +6,9 @@ import { EventBus } from '../abstract/event-bus';
  * 
  * Extends the EventBus class to handle events of type string.
  */
+@Injectable({
+    providedIn: 'root'
+})
 export class LanguageEventBusService extends EventBus<string> {
     /**
      * Creates an instance of LanguageEventBusService.
