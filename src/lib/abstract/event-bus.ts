@@ -1,6 +1,7 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 import { EventEmitter } from '../interfaces/event-emitter';
 import { EventReader } from '../interfaces/event-reader';
+import { randomBytes } from 'crypto';
 
 /**
  * Abstract class EventBus<T>
@@ -14,6 +15,7 @@ export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
 	private eventSubject: BehaviorSubject<T>;
 	private _event$: Observable<T>;
 
+	randomBytes: string;
 	/**
 	 * Constructor
 	 * 
@@ -24,6 +26,7 @@ export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
 	protected constructor(initialValue: T) {
 		this.eventSubject = new BehaviorSubject<T>(initialValue);
 		this._event$ = this.eventSubject.asObservable();
+		this.randomBytes = randomBytes(16).toString('hex');
 	}
 
 	/**
@@ -32,6 +35,7 @@ export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
 	 * @returns Observable<T> - The observable event stream.
 	 */
 	public get event$(): Observable<T> {
+
 		return this._event$;
 	}
 
@@ -41,6 +45,7 @@ export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
 	 * @param event - The event to emit.
 	 */
 	public emitEvent(event: T): void {
+		console.log('EventBus.emitEvent service', event);
 		this.eventSubject.next(event);
 	}
 

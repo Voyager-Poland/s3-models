@@ -2,9 +2,7 @@ import { ProfileEventEmitter } from '../context/profile-event-emitter';
 import { ProfileTokenModel } from '../models/profile.token.model';
 import { StateInitializerService } from './state-initializer.service';
 import { StateSaverService } from './state-saver.service';
-import { StateComparisonService, StateComparisonStructure } from '../stores/state-comparison.service';
-import { Inject } from '@angular/core';
-import { PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN, PROFILE_STATE_SAVER_TOKEN } from '../tokens/tokens';
+import { StateComparisonStructure } from '../stores/state-comparison.service';
 
 
 export class LoginService {
@@ -24,6 +22,7 @@ export class LoginService {
 	}
 
 	onLogin(login: ProfileTokenModel) {
+		console.log('LoginService.onLogin', login);
 		this.emitter.emitEvent(login);
 	}
 
