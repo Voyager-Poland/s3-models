@@ -16,7 +16,6 @@ export function createProfileEventEmitter(service: ProfileEventBusService): Prof
 })
 export class ProfileEventModule {
 	static forRoot(): ModuleWithProviders<ProfileEventModule> {
-		console.log('ProfileEventModule.forRoot()');
 		return {
 			ngModule: ProfileEventModule,
 			providers: [

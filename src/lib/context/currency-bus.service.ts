@@ -1,9 +1,13 @@
+import { Injectable } from "@angular/core";
 import { EventBus } from "../abstract/event-bus";
 /**
  * Service for managing currency events.
  * 
  * Extends the EventBus class to handle events of type string.
  */
+@Injectable({
+	providedIn: 'root'
+})
 export class CurrencyEventBusService extends EventBus<string> {
 	/**
 	 * Creates an instance of CurrencyEventBusService.

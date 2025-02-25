@@ -14,6 +14,7 @@ export class StateSaverService<T> {
 
 	public start(): void {
 		this.subscription = this.reader.event$.subscribe((state: T) => {
+			console.log('StateSaverService: Saving state', state);
 			this.saveState(state);
 		})
 	}

@@ -21,7 +21,6 @@ export class LoginService {
 	}
 
 	onLogin(login: ProfileTokenModel) {
-		console.log('LoginService.onLogin', login);
 		this.emitter.emitEvent(login);
 	}
 
