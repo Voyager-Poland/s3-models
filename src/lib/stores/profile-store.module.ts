@@ -1,7 +1,7 @@
 import { inject, Inject, NgModule, ModuleWithProviders } from '@angular/core';
 import { ProfileTokenCookieStore } from './profile-cookie-store';
 import { ProfileSSRStore } from './profile-ssr-store';
-import { PROFILE_INITIAL_STATE_PROVIDER_TOKEN, PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_SAVER_TOKEN, PROFILE_STORE } from '../tokens/tokens';
+import { PROFILE_INITIAL_STATE_PROVIDER_TOKEN, PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN, PROFILE_STATE_SAVER_TOKEN, PROFILE_STORE } from '../tokens/tokens';
 import { ClientModule } from '../common/client.module';
 import { IntialStateService } from './initial-state.service';
 import { ProfileTokenModel } from '../models/profile.token.model';
@@ -12,6 +12,7 @@ import { ProfileEventEmitter } from '../context/profile-event-emitter';
 import { ProfileEventReader } from '../context/profile-event-reader';
 import { StateSaverService } from '../services/state-saver.service';
 import { ClientInfoService } from '../common/client-info.service';
+import { StateInitializerService } from '../services/state-initializer.service';
 
 @NgModule({
 	imports: [ClientModule, ProfileEventModule],
@@ -37,6 +38,13 @@ export class ProfileStoreModule {
 					return new IntialStateService<ProfileTokenModel>(inject(PROFILE_STORE));
 				},
 				deps: [PROFILE_STORE]
+			},
+			{
+				provide: PROFILE_STATE_INITIALIZER_TOKEN,
+				useFactory: () => {
+					return new StateInitializerService<ProfileTokenModel>(inject(PROFILE_INITIAL_STATE_PROVIDER_TOKEN), inject(ProfileEventEmitter));
+				}
+				, deps: [PROFILE_INITIAL_STATE_PROVIDER_TOKEN, ProfileEventEmitter]
 			},
 			{
 				provide: PROFILE_STATE_SAVER_TOKEN,

@@ -59,7 +59,7 @@ export {
 // Modules
 export { ProfileEventModule } from './lib/context/profile-event.module';
 export { ProfileStoreModule } from './lib/stores/profile-store.module';
-export { LoginServiceModule } from './lib/services/LoginServiceModule'
+export { LoginServiceModule } from './lib/services/login.service.module'
 
 // Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';
