@@ -13,7 +13,7 @@ export class ProfileEventBusService extends EventBus<ProfileTokenModel>
 	/**
 	 * Creates an instance of ProfileEventBusService.
 	 * Initializes the EventBus with an empty ProfileTokenModel.
-	 */
+	 	 */
 	constructor() {
 		super(ProfileTokenModel.createEmpty());
 	}
