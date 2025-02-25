@@ -17,6 +17,7 @@ export { StateSaverService } from './lib/services/state-saver.service';
 export { StateInitializerService } from './lib/services/state-initializer.service';
 export { ClientCallbackService } from './lib/common/client-callback.service';
 export { ClientInfoService } from './lib/common/client-info.service';
+export { CurrencyService } from './lib/services/currency.service';
 
 // Exporting services/context
 export { ProfileEventBusService } from './lib/context/profile-bus.service';
@@ -51,15 +52,14 @@ export { ClientModule } from './lib/common/client.module';
 
 // Exporting tokens
 export {
-	PROFILE_INITIAL_STATE_PROVIDER_TOKEN, PROFILE_STORE,
-	PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN
+    PROFILE_INITIAL_STATE_PROVIDER_TOKEN, PROFILE_STORE,
+    PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN
 } from './lib/tokens/tokens';
 
 
 // Modules
 export { ProfileEventModule } from './lib/context/profile-event.module';
 export { ProfileStoreModule } from './lib/stores/profile-store.module';
-export { LoginServiceModule } from './lib/services/login.service.module'
 
 // Experimental
 export { HelloWorldService } from './lib/dump/hello-world.service';

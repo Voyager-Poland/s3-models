@@ -3,7 +3,13 @@ import { StateInitializerService } from './state-initializer.service';
 import { StateSaverService } from './state-saver.service';
 import { StateComparisonStructure } from '../stores/state-comparison.service';
 import { generateRandomString } from '../utils/string-utils';
+import { Inject, Injectable } from '@angular/core';
+import { CURRENCY_STATE_COMPARSION_TOKEN, CURRENCY_STATE_INITIALIZER_TOKEN, CURRENCY_STATE_SAVER_TOKEN } from '../tokens/tokens';
 
+@Injectable({
+	providedIn: 'root',
+	deps: [CURRENCY_STATE_INITIALIZER_TOKEN, CURRENCY_STATE_SAVER_TOKEN, CurrencyEventEmitter, CURRENCY_STATE_COMPARSION_TOKEN]
+})
 export class CurrencyService {
 
 	/** 
@@ -12,10 +18,10 @@ export class CurrencyService {
 	checkIstance: string;
 
 	constructor(
-		private stateInitializer: StateInitializerService<string>,
-		private stateSaver: StateSaverService<string>,
+		@Inject(CURRENCY_STATE_INITIALIZER_TOKEN) private stateInitializer: StateInitializerService<string>,
+		@Inject(CURRENCY_STATE_SAVER_TOKEN) private stateSaver: StateSaverService<string>,
 		private emitter: CurrencyEventEmitter,
-		private stateComparer: StateComparisonStructure<string>) {
+		@Inject(CURRENCY_STATE_COMPARSION_TOKEN) private stateComparer: StateComparisonStructure<string>) {
 		this.checkIstance = generateRandomString(16);
 		this.stateInitializer.setState();
 		this.stateSaver.start();

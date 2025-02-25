@@ -4,6 +4,13 @@ import { StateInitializerService } from './state-initializer.service';
 import { StateSaverService } from './state-saver.service';
 import { StateComparisonStructure } from '../stores/state-comparison.service';
 import { generateRandomString } from '../utils/string-utils';
+import { Inject, Injectable } from '@angular/core';
+import { PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN, PROFILE_STATE_SAVER_TOKEN } from '../tokens/tokens';
+
+@Injectable({
+	providedIn: 'root',
+	deps: [PROFILE_STATE_INITIALIZER_TOKEN, PROFILE_STATE_SAVER_TOKEN, ProfileEventEmitter, PROFILE_STATE_COMPARSION_TOKEN]
+})
 export class LoginService {
 
 	/** 
@@ -12,10 +19,10 @@ export class LoginService {
 	checkIstance: string;
 
 	constructor(
-		private stateInitializer: StateInitializerService<ProfileTokenModel>,
-		private stateSaver: StateSaverService<ProfileTokenModel>,
+		@Inject(PROFILE_STATE_INITIALIZER_TOKEN) private stateInitializer: StateInitializerService<ProfileTokenModel>,
+		@Inject(PROFILE_STATE_SAVER_TOKEN) private stateSaver: StateSaverService<ProfileTokenModel>,
 		private emitter: ProfileEventEmitter,
-		private stateComparer: StateComparisonStructure<ProfileTokenModel>) {
+		@Inject(PROFILE_STATE_COMPARSION_TOKEN) private stateComparer: StateComparisonStructure<ProfileTokenModel>) {
 		this.checkIstance = generateRandomString(16);;
 		this.stateInitializer.setState();
 		this.stateSaver.start();
