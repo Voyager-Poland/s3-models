@@ -12,6 +12,15 @@ export const PROFILE_STATE_SAVER_TOKEN = new InjectionToken<StateSaverService<Pr
 export const PROFILE_STATE_INITIALIZER_TOKEN = new InjectionToken<StateInitializerService<ProfileTokenModel>>('ProfieStateInitializerServic');
 export const PROFILE_STATE_COMPARSION_TOKEN = new InjectionToken<StateComparisonStructure<ProfileTokenModel>>('ProfileStateComparer');
 
+
+export const CURRENCY_STORE = new InjectionToken<Store<string>>('ProfileStore');
+export const CURRENCY_INITIAL_STATE_PROVIDER_TOKEN = new InjectionToken<InitialStateProvider<string>>('currencyInitialStateProvider>');
+export const CURRENCY_STATE_SAVER_TOKEN = new InjectionToken<StateSaverService<string>>('currencyStateSaver');
+export const CURRENCY_STATE_INITIALIZER_TOKEN = new InjectionToken<StateInitializerService<string>>('currecnyProfieStateInitializerServic');
+export const CURRENCY_STATE_COMPARSION_TOKEN = new InjectionToken<StateComparisonStructure<string>>('currencyProfileStateComparer');
+
+
+
 export const LANGUAGE_STORE = new InjectionToken<Store<string>>('LanguageStore');
 
 export const LANGUAGE_INITIAL_STATE_PROVIDER_TOKEN = new InjectionToken<InitialStateProvider<string>>('LanguageInitialStateProvider<string>');
