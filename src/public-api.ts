@@ -10,7 +10,6 @@ export { EventReader } from './lib/interfaces/event-reader';
 export { InitialStateProvider } from './lib/interfaces/internal-state.provider';
 export { Store } from './lib/interfaces/store';
 export { CookieOptions } from './lib/interfaces/cookie-options';
-export { ClientInfo } from './lib/interfaces/client-info';
 
 // Exporting services
 export { StringEventBusService } from './lib/services/string-bus.service';
@@ -52,8 +51,8 @@ export { ClientModule } from './lib/common/client.module';
 
 // Exporting tokens
 export {
-    CLIENT_INFO_TOKEN, PROFILE_INITIAL_STATE_PROVIDER_TOKEN, PROFILE_STORE,
-    PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN
+	PROFILE_INITIAL_STATE_PROVIDER_TOKEN, PROFILE_STORE,
+	PROFILE_STATE_COMPARSION_TOKEN, PROFILE_STATE_INITIALIZER_TOKEN
 } from './lib/tokens/tokens';
 
 

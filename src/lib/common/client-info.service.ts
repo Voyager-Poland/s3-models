@@ -1,9 +1,6 @@
-import { Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { ClientInfo } from '../interfaces/client-info';
 
-
-export class ClientInfoService implements ClientInfo {
+export class ClientInfoService {
 	constructor(
 		private platformId: Object
 	) { }

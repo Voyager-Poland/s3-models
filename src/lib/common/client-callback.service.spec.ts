@@ -1,8 +1,7 @@
 import { ClientCallbackService } from './client-callback.service';
-import { ClientInfo } from '../interfaces/client-info';
 import { jest } from '@jest/globals';
 
-class MockClientInfo implements ClientInfo {
+class MockClientInfo {
 	constructor(private isBrowserValue: boolean, private serviceVersion: string) { }
 
 	isBrowser(): boolean {
@@ -24,7 +23,7 @@ describe('ClientCallbackService', () => {
 
 	beforeEach(() => {
 		mockClientInfo = new MockClientInfo(true, '1.0.0');
-		clientCallbackService = new ClientCallbackService(mockClientInfo);
+		clientCallbackService = new ClientCallbackService(mockClientInfo as any);
 	});
 
 	it('should execute callback if running in the browser', () => {
@@ -35,7 +34,7 @@ describe('ClientCallbackService', () => {
 
 	it('should not execute callback if not running in the browser', () => {
 		mockClientInfo = new MockClientInfo(false, '1.0.0');
-		clientCallbackService = new ClientCallbackService(mockClientInfo);
+		clientCallbackService = new ClientCallbackService(mockClientInfo as any);
 		const callback = jest.fn();
 		clientCallbackService.executeIfBrowser(callback);
 		expect(callback).not.toHaveBeenCalled();
@@ -43,7 +42,7 @@ describe('ClientCallbackService', () => {
 
 	it('should execute callback if running in SSR', () => {
 		mockClientInfo = new MockClientInfo(false, '1.0.0');
-		clientCallbackService = new ClientCallbackService(mockClientInfo);
+		clientCallbackService = new ClientCallbackService(mockClientInfo as any);
 		const callback = jest.fn();
 		clientCallbackService.executeIfSSR(callback);
 		expect(callback).toHaveBeenCalled();
