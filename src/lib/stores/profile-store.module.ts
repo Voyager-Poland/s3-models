@@ -15,7 +15,7 @@ import { ClientInfoService } from '../common/client-info.service';
 import { StateInitializerService } from '../services/state-initializer.service';
 
 @NgModule({
-	imports: [ClientModule, ProfileEventModule],
+	imports: [ClientModule, ProfileEventModule.forRoot()],
 	providers: []
 })
 export class ProfileStoreModule {
