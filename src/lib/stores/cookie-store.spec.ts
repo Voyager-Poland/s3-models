@@ -15,7 +15,7 @@ describe('CookieStore', () => {
 	});
 
 	it('should set and get a value', () => {
-		var testvalue = 'test-value';
+		const testvalue = 'test-value';
 
 		store.setValue(testvalue);
 		const savedObject = store.getValue();

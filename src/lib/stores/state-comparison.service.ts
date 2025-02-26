@@ -7,6 +7,7 @@ export class StateComparisonStructure<T> {
 	stop(): void {
 	}
 }
+
 export class StateComparisonService<T> extends StateComparisonStructure<T> {
 	private intervalId: NodeJS.Timeout | null = null;
 
