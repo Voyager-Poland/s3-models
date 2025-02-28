@@ -33,6 +33,7 @@ export class LoginService {
 	destroy(): void {
 		this.stateComparer.stop();
 		this.stateSaver.destroy();
+		this.emitter.complete();
 	}
 
 	onLogin(login: ProfileTokenModel) {

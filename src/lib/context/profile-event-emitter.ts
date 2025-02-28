@@ -13,4 +13,8 @@ export class ProfileEventEmitter implements EventEmitter<ProfileTokenModel> {
 	public get getCurrentValue(): ProfileTokenModel {
 		return this.service.getCurrentValue;
 	}
+
+	public complete(): void {
+		this.service.complete();
+	}	
 }

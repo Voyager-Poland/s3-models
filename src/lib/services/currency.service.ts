@@ -31,9 +31,12 @@ export class CurrencyService {
 	destroy(): void {
 		this.stateComparer.stop();
 		this.stateSaver.destroy();
+		this.emitter.complete();
 	}
 
 	onCurrencyChange(currency: string) {
 		this.emitter.emitEvent(currency);
 	}
+
+
 }

@@ -28,6 +28,9 @@ class MockEventEmitter<T> implements EventEmitter<T> {
 	get getCurrentValue(): T {
 		return this.currentValue;
 	}
+
+	complete(): void {
+	}
 }
 
 describe('StateComparisonService', () => {

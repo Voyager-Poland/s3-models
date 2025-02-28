@@ -17,7 +17,8 @@ describe('StateInitializerService', () => {
 			emitEvent: jest.fn(),
 			get getCurrentValue() {
 				return 'initial-state';
-			}
+			},
+			complete: jest.fn()
 		};
 
 		service = new StateInitializerService<string>(initialStateProvider, eventEmitter);

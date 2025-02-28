@@ -23,7 +23,8 @@ describe('LoginService', () => {
 			destroy: jest.fn()
 		};
 		const emitter = {
-			emitEvent: jest.fn()
+			emitEvent: jest.fn(),
+			complete: jest.fn()
 		};
 		const comparerSpy = {
 			start: jest.fn(),

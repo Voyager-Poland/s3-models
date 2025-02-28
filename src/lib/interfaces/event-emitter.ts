@@ -14,6 +14,11 @@ export interface EventEmitter<T> {
 	 * @returns The current value of the event stream.
 	 */
 	get getCurrentValue(): T;
+
+	/**
+	 * Completes the event stream.
+	 */
+	complete(): void;
 }
 
 
