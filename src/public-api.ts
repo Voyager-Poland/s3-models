@@ -30,7 +30,6 @@ export { LanguageEventEmitter } from './lib/context/language-event-emitter';
 export { LanguageEventReader } from './lib/context/language-event-reader';
 export { LanguageTranslationService } from './lib/context/language-translation.service';
 export { ProfileTokenValue } from './lib/stores/profile-token-value';
-export { ProfileService } from './lib/context/profile.service';
 
 // Exporting store services
 export { CookieStore } from './lib/stores/cookie-store';
