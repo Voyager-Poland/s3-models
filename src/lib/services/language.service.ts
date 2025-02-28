@@ -31,6 +31,7 @@ export class LanguageService {
     destroy(): void {
         this.stateComparer.stop();
         this.stateSaver.destroy();
+        this.emitter.complete();
     }
 
     onLanguageChange(language: string) {

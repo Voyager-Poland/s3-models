@@ -30,6 +30,7 @@ describe('CurrencyService', () => {
 		jest.spyOn(stateComparer, 'start');
 		jest.spyOn(stateComparer, 'stop');
 		jest.spyOn(emitter, 'emitEvent');
+		jest.spyOn(emitter, 'complete');
 
 		currencyService = new CurrencyService(stateInitializer, stateSaver, emitter, stateComparer);
 	});
@@ -44,6 +45,7 @@ describe('CurrencyService', () => {
 		currencyService.destroy();
 		expect(stateComparer.stop).toHaveBeenCalled();
 		expect(stateSaver.destroy).toHaveBeenCalled();
+		expect(emitter.complete).toHaveBeenCalled();
 	});
 
 	it('should emit event on currency change', () => {
