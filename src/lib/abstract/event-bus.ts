@@ -59,4 +59,11 @@ export abstract class EventBus<T> implements EventEmitter<T>, EventReader<T> {
 	public get getCurrentValue(): T {
 		return this.eventSubject.getValue();
 	}
+
+	/**
+	 * Completes the event stream.
+	 */
+	public complete(): void {
+		this.eventSubject.complete();
+	}
 }

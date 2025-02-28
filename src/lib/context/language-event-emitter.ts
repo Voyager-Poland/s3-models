@@ -12,4 +12,8 @@ export class LanguageEventEmitter implements EventEmitter<string> {
 	public get getCurrentValue(): string {
 		return this.service.getCurrentValue;
 	}
+
+	public complete(): void {
+		this.service.complete();
+	}
 }

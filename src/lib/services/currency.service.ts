@@ -31,6 +31,7 @@ export class CurrencyService {
 	destroy(): void {
 		this.stateComparer.stop();
 		this.stateSaver.destroy();
+		this.emitter.
 	}
 
 	onCurrencyChange(currency: string) {
